@@ -28,8 +28,8 @@
 (global-unset-key (kbd "C-g"))
 (global-set-key (kbd "C-g") 'find-file-at-point)
 
-(global-unset-key (kbd "C-b"))
-(global-set-key (kbd "C-b") 'switch-to-buffer)
+(global-unset-key (kbd "C-p"))
+(global-set-key (kbd "C-p") 'switch-to-buffer)
 
 (global-unset-key (kbd "M-<left>"))
 (global-set-key (kbd "M-<left>") 'windmove-left)
@@ -46,11 +46,14 @@
 (global-unset-key (kbd "C-k"))
 (global-set-key (kbd "C-k") 'kill-current-buffer)
 
-(global-unset-key (kbd "C-p"))
-(global-set-key (kbd "C-p") 'treemacs-edit-workspaces)
+(global-unset-key (kbd "C-S-k"))
+(global-set-key (kbd "C-S-k") 'kill-buffer)
 
-(global-unset-key (kbd "C-n"))
-(global-set-key (kbd "C-n") 'wor               )
+;;(global-unset-key (kbd "C-p"))
+;;(global-set-key (kbd "C-p") 'treemacs-edit-workspaces)
+
+;;(global-unset-key (kbd "C-n"))
+;;(global-set-key (kbd "C-n") 'wor               )
 
 (global-unset-key (kbd "C-S-p"))
 (global-set-key (kbd "C-S-p") 'projectile-reset-known-projects)
@@ -83,11 +86,23 @@
 (global-unset-key (kbd "C-,"))
 (global-set-key (kbd "C-,") 'uncomment-region)
 
-(global-unset-key (kbd "C-B"))
-(global-set-key (kbd "C-B") 'bookmark-bmenu-list)
+;; (global-unset-key (kbd "C-b"))
+;; (global-set-key (kbd "C-b") 'bookmark-bmenu-list)
 
 (global-unset-key (kbd "C-b"))
-(global-set-key (kbd "C-b") 'bookmark-set)
+(global-set-key (kbd "C-b") 'bookmark-load)
+(global-set-key (kbd "C-b") 'bookmark-jump)
 
-(define-key bookmark-bmenu-mode-map (kbd "C-d") 'bookmark-delete)
+(global-unset-key (kbd "C-S-b"))
+(global-set-key (kbd "C-S-b") 'bookmark-load)
+(global-set-key (kbd "C-S-b") 'bookmark-set)
+
+(global-unset-key (kbd "C-d"))
+(global-set-key (kbd "C-d") 'bookmark-load)
+(global-set-key (kbd "C-d") 'bookmark-delete)
+
+;; (global-unset-key (kbd "C-b"))
+;; (global-set-key (kbd "C-b") 'bookmark-set)
+
+;;(define-key bookmark-bmenu-mode-li (kbd "C-d") 'bookmark-delete)
 ;;(define-key treemacs-mode-map (kbd "<right>") 'treemacs-root-down)

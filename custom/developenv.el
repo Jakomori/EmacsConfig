@@ -17,6 +17,7 @@
 ;;   (persp-mode)
 ;;   )
 
+;;(setq bmkp-bmenu-state-file t)
 
 ;; "treemacs" is that funny thing at your left, to easily navigate inside the declared project
 (use-package treemacs
