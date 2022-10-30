@@ -1,12 +1,10 @@
 #	Jakomo's Emacs .gitignore
 #	ignored files from git
-straight
-straight/**/.git 
+
 **/*
 #	actually, I prefer to whitelist them instead
 
-!*/
-#	just to let the files to be searched in subfolders
+
 
 !.gitignore
 #	well, I guess this is important
