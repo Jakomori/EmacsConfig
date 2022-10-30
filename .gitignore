@@ -1,0 +1,23 @@
+#	Jakomo's Emacs .gitignore
+#	ignored files from git
+straight/**/.git
+**/*
+#	actually, i prefer to whitelist them instead
+
+!*/
+#	just to let the files to be searched in subfolders
+
+!.gitignore
+#	well, I guess this is important
+
+!init.el
+#	whithout this I dont't think anything here would be of any use
+
+!custom/*.el
+#	I prefer to have a shorter init, and load file for specific tasks
+
+!Makefile
+#	just something I like to play with
+
+!cppf/**
+#	in case of some new cpp project
