@@ -5,12 +5,18 @@
   (savehist-mode))
 
 
-
 ;; "projectile" allow you to easily switch between buffers [I think?]
 (use-package projectile
   :ensure
   :init
   (projectile-mode))
+
+;; (use-package persp-mode
+;;   :ensure
+;;   :init
+;;   (persp-mode)
+;;   )
+
 
 ;; "treemacs" is that funny thing at your left, to easily navigate inside the declared project
 (use-package treemacs
@@ -25,13 +31,18 @@
   (setq treemacs-use-filewatch-mode t)
   (setq treemacs-use-collapsed-directories 3)
 ;;  (treemacs-select-directory)
-  ;;(setq treemacs-add-and-display-current-project)
   ;;  (setq treemacs-is-never-other-window t)
+  ;; :bind (:map treemacs-mode-map
+  ;; 	      ("<left>" . root-up)
+  ;; 	      ("<right>" . root-down))
   )
 (setq-default dotspacemacs-configuration-layers '(
    (treemacs :variables treemacs-lock-width nil)))
-
-
+(treemacs-project-follow-mode)
+(treemacs-display-current-project-exclusively)
+(projectile-reset-known-projects)
+(kill-current-buffer)
+;;(treemacs-peek-mode)
 
 ;; ;; Treemacs
 ;; (use-package treemacs
@@ -113,5 +124,9 @@
 ;;(use-package vterm
 ;;  :ensure t
 ;;  :load-path  "~/.emacs.d/libvterm/")
+
+(use-package bookmark+
+  :ensure
+  )
 
 

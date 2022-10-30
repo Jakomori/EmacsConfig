@@ -22,8 +22,8 @@
 (global-unset-key (kbd "C-t"))
 (global-set-key (kbd "C-t") 'multi-term-dedicated-open)
 
-(global-set-key (kbd "<f11>") nil)
-(global-set-key (kbd "<f11>") 'toggle-frame-maximized)
+;;(global-set-key (kbd "<f11>") nil)
+;;(global-set-key (kbd "<f11>") 'toggle-frame-maximized)
 
 (global-unset-key (kbd "C-g"))
 (global-set-key (kbd "C-g") 'find-file-at-point)
@@ -49,20 +49,45 @@
 (global-unset-key (kbd "C-p"))
 (global-set-key (kbd "C-p") 'treemacs-edit-workspaces)
 
-;;(global-unset-key (kbd "C-p"))
-;;(global-set-key (kbd "C-p") 'treemacs-add-and-display-current-project)
+(global-unset-key (kbd "C-n"))
+(global-set-key (kbd "C-n") 'wor               )
+
+(global-unset-key (kbd "C-S-p"))
+(global-set-key (kbd "C-S-p") 'projectile-reset-known-projects)
+(global-set-key (kbd "C-S-p") 'treemacs-add-and-display-current-project-exclusively)
+
+;;(use-local-map (copy-keymap foo-mode-map))
+;;(local-set-key "<left>" 'treemacs-root-up)
+;;(local-set-key "<right>" 'treemacs-root-down)
+
+;; (global-set-key (kbd "<left>") 'treemacs-root-up)
+;; (global-set-key (kbd "<right>") 'treemacs-root-down)
+
+(define-key treemacs-mode-map (kbd "<left>") 'treemacs-root-up)
+(define-key treemacs-mode-map (kbd "<right>") 'treemacs-root-down)
+;;(define-key treemacs-mode-map (kbd "<right>") 'treemacs-peek-mode-hook)
+;;(define-key treemacs-mode-map (kbd "<right>") 'treemacs-root-down)
+
+
+
 
 (global-unset-key (kbd "M-S-<right>"))
 (global-set-key (kbd "M-S-<right>") 'next-buffer)
 
-(global-unset-key (kbd "M-S-<right>"))
-(global-set-key (kbd "M-S-<right>") 'previous-buffer)
+(global-unset-key (kbd "M-S-<left>"))
+(global-set-key (kbd "M-S-<left>") 'previous-buffer)
 
 (global-unset-key (kbd "C-;"))
 (global-set-key (kbd "C-;") 'comment-region)
 
 (global-unset-key (kbd "C-,"))
 (global-set-key (kbd "C-,") 'uncomment-region)
-	       
 
+(global-unset-key (kbd "C-B"))
+(global-set-key (kbd "C-B") 'bookmark-bmenu-list)
 
+(global-unset-key (kbd "C-b"))
+(global-set-key (kbd "C-b") 'bookmark-set)
+
+(define-key bookmark-bmenu-mode-map (kbd "C-d") 'bookmark-delete)
+;;(define-key treemacs-mode-map (kbd "<right>") 'treemacs-root-down)

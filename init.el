@@ -85,3 +85,4 @@
 
 ;; Loading "globalkb.el", that sets the keybindings
 (load-file "~/.emacs.d/custom/globalkb.el")
+
