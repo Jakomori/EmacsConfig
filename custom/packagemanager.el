@@ -34,8 +34,10 @@
 (straight-use-package 'use-package)
 
 ;; Configure "use-package" to use "straight.el" by default
-(use-package straight
-             :custom (straight-use-package-by-default t))
+;;(use-package straight
+;;             :custom (straight-use-package-by-default t))
+(setq straight-use-package-by-default t)
+
 
 ;; [boh.. dicono che sia utile]
 (use-package evil-commentary
