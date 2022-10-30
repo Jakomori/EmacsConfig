@@ -19,8 +19,14 @@
 (global-unset-key (kbd "C-v"))
 ;;(global-set-key (kbd "") ')
 
+(global-unset-key (kbd "C-q"))
+(global-set-key (kbd "C-q") 'delete-window)
+
 (global-unset-key (kbd "C-t"))
 (global-set-key (kbd "C-t") 'multi-term-dedicated-open)
+
+;;(define-key multi-term-dedicated-buffer (kbd "C-c") "C-c")
+;;(define-key multi-term-dedicated-buffer (kbd "C-t") 'delete-window)
 
 ;;(global-set-key (kbd "<f11>") nil)
 ;;(global-set-key (kbd "<f11>") 'toggle-frame-maximized)
