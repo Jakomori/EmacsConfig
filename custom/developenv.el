@@ -1,11 +1,11 @@
-;; "savehist" saves the buffer chronology
+;; "savehist" is a package that saves the buffer chronology (when in save-hist-mode)
 (use-package savehist
   :ensure
   :init
   (savehist-mode))
 
 
-;; "projectile" allow you to easily switch between buffers [I think?]
+;; "projectile" is a package that manages the workspaces and projects (when in projectile-mode)
 (use-package projectile
   :ensure
   :init
@@ -17,32 +17,37 @@
 ;;   (persp-mode)
 ;;   )
 
-;;(setq bmkp-bmenu-state-file t)
-
-;; "treemacs" is that funny thing at your left, to easily navigate inside the declared project
+;; "treemacs" is a package that allow the user to navigate files inside emacs via a buffer in "treemacs-mode-map)
 (use-package treemacs
   :ensure
   :init
 ;; (setf treemacs-find-workspace-method ('find-for-file-or-pick-first)) 
 ;;  (treemacs-select-directory t)
 ;;  (treemacs-add-and-display-current-project)
-  ;;(treemacs-git-mode t)
- (setq treemacs-missing-project-action 'ask)
+;;  (treemacs-git-mode t)
+;;  (setq treemacs-missing-project-action 'ask)
   (setq treemacs-use-follow-mode t)
+;; (treemacs-file-event-delay 5000)
+;; With "treemacs-use-filewatch-mode" the treemacs buffer refresh itself to register changes
   (setq treemacs-use-filewatch-mode t)
+;; With "treemacs-use-filewatch-mode" the treemacs buffer refresh itself to register changes
   (setq treemacs-use-collapsed-directories 3)
 ;;  (treemacs-select-directory)
   ;;  (setq treemacs-is-never-other-window t)
   ;; :bind (:map treemacs-mode-map
   ;; 	      ("<left>" . root-up)
   ;; 	      ("<right>" . root-down))
-  )
+  :bind
+;;  (("M-t" . treemacs-select-window))
+   )
 (setq-default dotspacemacs-configuration-layers '(
    (treemacs :variables treemacs-lock-width nil)))
 (treemacs-project-follow-mode)
 (treemacs-display-current-project-exclusively)
+;; (dired-jump 'treemacs-visit-node-default)
 (projectile-reset-known-projects)
 (kill-current-buffer)
+
 ;;(treemacs-peek-mode)
 
 ;; ;; Treemacs
@@ -129,5 +134,6 @@
 (use-package bookmark+
   :ensure
   )
+(bookmark-bmenu-mode)
 
-
+(setq bmkp-bmenu-state-file t)

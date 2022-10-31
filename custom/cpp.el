@@ -1,6 +1,9 @@
+
+;; "ggtags" is a package that recognize the c,cpp and others language
 (use-package ggtags
   :ensure)
 
+;; Calls the "c-mode" in "ggtags" when opening a file of a language that it recognizes
 (require 'ggtags)
 (add-hook 'c-mode-common-hook
 	  (lambda ()

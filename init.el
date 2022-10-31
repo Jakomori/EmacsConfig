@@ -16,6 +16,9 @@
 ;; Loading "theme.el", where the theme is set (I used spacemacs-dark)
 (load-file "~/.emacs.d/custom/theme.el")
 
+;; Loading "enviroment.el", where the gui preference are set
+(load-file "~/.emacs.d/custom/enviroment.el")
+
 ;; Loading "corfu.el". It sets "corfu", an auto completition utility 
 (load-file "~/.emacs.d/custom/corfu.el")
 
@@ -47,7 +50,10 @@
   ;;----------------------
   (setq completition-cycle-threshold 3)
   (setq always-indent 'complete)
-;;  (setq initial-buffer-choice nil)
+  ;;  (setq initial-buffer-choice nil)
+  :custom
+  (treemacs-indentation 2)
+  (treemacs-indentation-string " ")
   )
 
 (use-package dabbrev
@@ -85,4 +91,3 @@
 
 ;; Loading "globalkb.el", that sets the keybindings
 (load-file "~/.emacs.d/custom/globalkb.el")
-
