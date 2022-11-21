@@ -90,12 +90,6 @@ clean:
 # "-f forces the action
 # used to remove the objects in (ODIR)
 
-tidy:
-	clear
-#	clean the shell
-
-# --- Customized Targets
-
 focus: $(OBJS)
 	@$(COMP) -o $(APP) $(OBJS)
 	@clear
@@ -126,17 +120,16 @@ emacsin: $(INPATH)
 		@cp -r $(EMACSCORE) $(EMACS); \
 	fi
 
-
 makeupdate:
 	@cp ./Makefile ~/.emacs.d/Makefile
 
-buildtemp:
-	mkdir -p $(EMACSTEMP)
+# buildtemp:
+# 	mkdir -p $(EMACSTEMP)
 
-deltemp:
-	rm -r $(EMACSTEMP)
+# deltemp:
+# 	rm -r $(EMACSTEMP)
 
-newcpp:
+newcpp: $(OUTPATH)=bar
 	@mkdir -p $(OUTPATH)/cppex
 	@mkdir -p $(EMACSTEMP)
 	@cp -r $(EMACSCPP)/newcpp/* $(EMACSMAKE) $(EMACSTEMP)

@@ -13,14 +13,16 @@
 ;; (global-unset-key (kbd "C-_"))
 ;; (global-set-key (kbd "C-_") 'undo)
 
+;;(global-unset-key (kbd "C--"))
+;;(global-set-key (kbd "C--") 'repeat)
+
 ;; (global-unset-key (kbd "C-s"))
 ;; (global-set-key (kbd "C-s") 'save-buffer)
 
-(global-unset-key (kbd "C-v"))
+;;(global-unset-key (kbd "C-v"))
 ;;(global-set-key (kbd "") ')
 
-(global-unset-key (kbd "C-q"))
-(global-set-key (kbd "C-q") 'delete-window)
+
 
 (global-unset-key (kbd "C-n"))
 (global-set-key (kbd "C-n") 'split-window-horizontally)
@@ -28,8 +30,13 @@
 ;;(global-unset-key (kbd "C-n"))
 ;;(global-set-key (kbd "C-n") 'new-window-on-right)
 
-(global-unset-key (kbd "C-t"))
-(global-set-key (kbd "C-t") 'multi-term-dedicated-open)
+(global-unset-key (kbd "C-r"))
+(global-set-key (kbd "C-r") 'multi-term-dedicated-open)
+
+(global-unset-key (kbd "C-S-r"))
+(global-set-key (kbd "C-S-r") 'multi-term-dedicated-close)
+
+;;(define-key multi-term-dedicated-window (kbd "<escape>") 'previous-window)
 
 ;;(define-key multi-term-dedicated-buffer (kbd "C-c") "C-c")
 ;;(define-key multi-term-dedicated-buffer (kbd "C-t") 'delete-window)
@@ -37,8 +44,8 @@
 ;;(global-set-key (kbd "<f11>") nil)
 ;;(global-set-key (kbd "<f11>") 'toggle-frame-maximized)
 
-(global-unset-key (kbd "C-g"))
-(global-set-key (kbd "C-g") 'find-file-at-point)
+;; (global-unset-key (kbd "C-g"))
+;; (global-set-key (kbd "C-g") 'find-file-at-point)
 
 (global-unset-key (kbd "C-p"))
 (global-set-key (kbd "C-p") 'switch-to-buffer)
@@ -56,7 +63,7 @@
 (global-set-key (kbd "M-<down>") 'windmove-down)
 
 (global-unset-key (kbd "C-k"))
-(global-set-key (kbd "C-k") 'kill-current-buffer)
+(global-set-key (kbd "C-k") 'delete-window)
 
 (global-unset-key (kbd "C-S-k"))
 (global-set-key (kbd "C-S-k") 'kill-buffer)
@@ -80,10 +87,20 @@
 
 (define-key treemacs-mode-map (kbd "<left>") 'treemacs-root-up)
 (define-key treemacs-mode-map (kbd "<right>") 'treemacs-root-down)
+
 ;;(define-key treemacs-mode-map (kbd "<right>") 'treemacs-peek-mode-hook)
 ;;(define-key treemacs-mode-map (kbd "<right>") 'treemacs-root-down)
 ;;(define-key treemacs-mode-map (kbd "b") 'treemacs-bookmark)
 ;;(define-key treemacs-mode-map (kbd "b") 'bookmark-set)
+
+(global-unset-key (kbd "C-t"))
+(global-set-key (kbd "C-t") 'treemacs-select-window)
+
+(global-unset-key (kbd "C-S-t"))
+(global-set-key (kbd "C-S-t") 'treemacs)
+
+;; (global-unset-key (kbd "C-_"))
+;; (global-set-key (kbd "C-_") 'undo)
 
 
 (global-unset-key (kbd "M-S-<right>"))
@@ -98,11 +115,11 @@
 (global-unset-key (kbd "C-,"))
 (global-set-key (kbd "C-,") 'uncomment-region)
 
-(global-unset-key (kbd "C-p"))
-(global-set-key (kbd "C-p") 'bmkp-bookmark-list-jump)
+;; (global-unset-key (kbd "C-p"))
+;; (global-set-key (kbd "C-p") 'bmkp-bookmark-list-jump)
 
-(global-unset-key (kbd "C-S-p"))
-(global-set-key (kbd "C-S-p") 'bmkp-bookmark-list)
+;; (global-unset-key (kbd "C-S-p"))
+;; (global-set-key (kbd "C-S-p") 'bmkp-bookmark-list)
 
 
 ;;(global-unset-key (kbd "C-b"))
@@ -113,12 +130,12 @@
 ;; (global-set-key (kbd "C-b") 'bookmark-load)
 ;; (global-set-key (kbd "C-b") 'bookmark-jump)
 
-(global-unset-key (kbd "C-b"))
-(global-set-key (kbd "C-b") 'bookmark-bmenu-list)
+;; (global-unset-key (kbd "C-b"))
+;; (global-set-key (kbd "C-b") 'bookmark-bmenu-list)
 
-(global-unset-key (kbd "C-S-b"))
-(global-set-key (kbd "C-S-b") 'bookmark-load)
-(global-set-key (kbd "C-S-b") 'bookmark-set)
+;; (global-unset-key (kbd "C-S-b"))
+;; (global-set-key (kbd "C-S-b") 'bookmark-load)
+;; (global-set-key (kbd "C-S-b") 'bookmark-set)
 
 ;;(defcustom dired-<RET>-actions-config
 ;;   '((file-node   . treemacs-toggle-node)
@@ -150,3 +167,5 @@
 ;;     (tag-node         . treemacs-visit-node-default))
 ;;   "Defines the behaviour of `treemacs--action'.
 
+;; (term-unbind-key-list)
+;; (term-bind-key-alist)
