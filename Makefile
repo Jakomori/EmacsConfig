@@ -129,7 +129,7 @@ makeupdate:
 # deltemp:
 # 	rm -r $(EMACSTEMP)
 
-newcpp: $(OUTPATH)=bar
+newcpp: 
 	@mkdir -p $(OUTPATH)/cppex
 	@mkdir -p $(EMACSTEMP)
 	@cp -r $(EMACSCPP)/newcpp/* $(EMACSMAKE) $(EMACSTEMP)

@@ -48,7 +48,8 @@
 (projectile-reset-known-projects)
 (kill-current-buffer)
 (add-hook 'treemacs-mode-hook (lambda() (display-line-numbers-mode -1)))
-
+;; (if (daemonp)
+;;     (add-hook 'after-make-frame-functions 'treemacs))
 ;;(treemacs-peek-mode)
 
 ;; ;; Treemacs
@@ -138,3 +139,40 @@
 (bookmark-bmenu-mode)
 
 (setq bmkp-bmenu-state-file t)
+
+(use-package minimap
+  :ensure
+  )
+;;(minimap-mode)
+
+(use-package which-key
+  :ensure
+  )
+
+;; Allow C-h to trigger which-key before it is done automatically
+(setq which-key-show-early-on-C-h t)
+;; make sure which-key doesn't show normally but refreshes quickly after it is
+;; triggered.
+(setq which-key-idle-delay 10000)
+(setq which-key-idle-secondary-delay 0.05)
+(which-key-mode)
+(setq which-key-popup-type 'side-window)
+(setq which-key-side-window-location 'bottom)
+
+;; (which-key-setup-minibuffer)
+
+;; (setq transparency_level 0)
+;; (defun mulit-term-call ()
+;;   "Toggles transparency of Emacs between 3 settings (none, mild, moderate)."
+;;   (interactive)
+;;   (if (equal transparency_level 0)
+;;       (progn (set-frame-parameter (selected-frame) 'alpha '(60 . 60))
+;;          (setq transparency_l))
+;;     (if (equal transparency_level 1)
+;;     (progn (set-frame-parameter (selected-frame) 'alpha '(80 . 70))
+;;            (setq transparency_level 2))
+;;       (if (equal transparency_level 2)
+;;       (progn (set-frame-parameter (selected-frame) 'alpha '(100 . 75))
+;;          (setq transparency_level 0)))
+;;       )))
+;; (define-key global-map (kbd "C-c t") 'my:change_transparency)
