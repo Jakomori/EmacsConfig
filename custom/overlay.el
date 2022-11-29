@@ -35,3 +35,20 @@
 ;; Display the lines number
 (global-display-line-numbers-mode t)
 
+;; (defun show:menu ()
+;;   "Toggle the menu visualization"
+;;   (interactive)
+;;   (if 
+
+;; (defvar show_menu()
+;;   (let ((show_menu 0))
+;;     (cond
+;;      ((equal show_menu 0)
+;;       (setq show_menu 1)
+;;       (menu-bar-mode t)
+;;       ;;(altro)
+;;       )
+;;      ((equal show_menu 1)
+;;       (menu-bar-mode -1)
+;;       (setq show_menu 0))
+;;      )))

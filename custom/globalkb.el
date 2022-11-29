@@ -10,19 +10,11 @@
 ;; (global-unset-key (kbd "C-w"))
 ;; (global-set-key (kbd "C-w") 'kill-region)
 
-;; (global-unset-key (kbd "C-_"))
-;; (global-set-key (kbd "C-_") 'undo)
+(global-unset-key (kbd "C-_"))
+(global-set-key (kbd "C-_") 'undo-fu-only-undo)
 
-;;(global-unset-key (kbd "C--"))
-;;(global-set-key (kbd "C--") 'repeat)
-
-;; (global-unset-key (kbd "C-s"))
-;; (global-set-key (kbd "C-s") 'save-buffer)
-
-;;(global-unset-key (kbd "C-v"))
-;;(global-set-key (kbd "") ')
-
-
+(global-unset-key (kbd "C--"))
+(global-set-key (kbd "C--") 'undo-fu-only-redo)
 
 (global-unset-key (kbd "C-n"))
 (global-set-key (kbd "C-n") 'split-window-horizontally)
@@ -68,6 +60,13 @@
 (global-unset-key (kbd "C-S-k"))
 (global-set-key (kbd "C-S-k") 'kill-buffer)
 
+(global-unset-key (kbd "C-+"))
+(global-set-key (kbd "C-+") 'origami-close-node)
+
+(global-unset-key (kbd "C-ù"))
+(global-set-key (kbd "C-ù") 'origami-show-node)
+
+
 ;;(global-unset-key (kbd "C-p"))
 ;;(global-set-key (kbd "C-p") 'treemacs-edit-workspaces)
 
@@ -98,10 +97,6 @@
 
 (global-unset-key (kbd "C-S-t"))
 (global-set-key (kbd "C-S-t") 'treemacs)
-
-;; (global-unset-key (kbd "C-_"))
-;; (global-set-key (kbd "C-_") 'undo)
-
 
 (global-unset-key (kbd "M-S-<right>"))
 (global-set-key (kbd "M-S-<right>") 'next-buffer)
@@ -169,3 +164,5 @@
 
 ;; (term-unbind-key-list)
 ;; (term-bind-key-alist)
+
+;; (global-set-key (kbd "C-<BACKSPACE>") 

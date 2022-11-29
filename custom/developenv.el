@@ -17,6 +17,14 @@
 ;;   (persp-mode)
 ;;   )
 
+(use-package origami
+  :ensure
+  :init
+  :config
+  (global-origami-mode 1))
+
+
+
 ;; "treemacs" is a package that allow the user to navigate files inside emacs via a buffer in "treemacs-mode-map)
 (use-package treemacs
   :ensure

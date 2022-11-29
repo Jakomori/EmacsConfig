@@ -2,6 +2,8 @@
 ;; by Jakomo
 ;; I'm sorry you have to see this
 
+
+
 ;; Write customization made throught "customize" in "customized.el"
 (setq custom-file "~/.emacs.d/custom/customized.el")
 ;; Load the customization file "customized.el"
@@ -21,6 +23,12 @@
 
 ;; Loading "corfu.el". It sets "corfu", an auto completition utility 
 (load-file "~/.emacs.d/custom/corfu.el")
+
+
+(straight-use-package
+  '(nano-emacs :type git :host github :repo "rougier/nano-emacs"))
+(setq nano-font-family-monospaced "Roboto Mono")
+
 
 (use-package emacs
   :init
@@ -56,6 +64,10 @@
   (treemacs-indentation-string " ")
   )
 
+;;(use-package nano-emacs
+;;  :ensure
+;;  :init)
+
 (use-package dabbrev
   :ensure
   :bind
@@ -78,8 +90,12 @@
 ;; Loading "developenv.el", that sets the global development enviroment
 (load-file "~/.emacs.d/custom/developenv.el")
 
-;; Loading "cpp.el", that sets the cpp development enviroment
+;; Loading "cpp.el", that sets the cpp developing enviroment
 (load-file "~/.emacs.d/custom/cpp.el")
+
+(use-package undo-fu
+  :ensure
+  :init)
 
 ;; "undo-fu-session" allow you to save the undo history between file saving, closing and reopening
 (use-package undo-fu-session
