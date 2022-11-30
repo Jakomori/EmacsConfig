@@ -1,8 +1,25 @@
 
 ;;Emacs Default
 
-;; (global-unset-key (kbd "C-y"))
-;; (global-set-key (kbd "C-y") 'yank)
+
+
+(global-unset-key (kbd "C-y"))
+(global-set-key (kbd "C-y") 'yank)
+
+(global-unset-key (kbd "C-v"))
+(global-set-key (kbd "C-v") 'yank)
+
+(global-unset-key (kbd "C-z"))
+(global-set-key (kbd "C-z") 'undo-fu-only-undo)
+
+(global-unset-key (kbd "C-S-z"))
+(global-set-key (kbd "C-S-z") 'undo-fu-only-redo)
+
+(global-unset-key (kbd "C-f"))
+(global-set-key (kbd "C-f") 'isearch-forward)
+
+(global-unset-key (kbd "C-s"))
+(global-set-key (kbd "C-s") 'suspend-frame)
 
 ;; (global-unset-key (kbd "M-w"))
 ;; (global-set-key (kbd "M-w") 'killing-ring-save)
@@ -22,11 +39,11 @@
 ;;(global-unset-key (kbd "C-n"))
 ;;(global-set-key (kbd "C-n") 'new-window-on-right)
 
-(global-unset-key (kbd "C-r"))
-(global-set-key (kbd "C-r") 'multi-term-dedicated-open)
+(global-unset-key (kbd "C-t"))
+(global-set-key (kbd "C-t") 'multi-term-dedicated-open)
 
-(global-unset-key (kbd "C-S-r"))
-(global-set-key (kbd "C-S-r") 'multi-term-dedicated-close)
+(global-unset-key (kbd "C-S-t"))
+(global-set-key (kbd "C-S-t") 'multi-term-dedicated-close)
 
 ;;(define-key multi-term-dedicated-window (kbd "<escape>") 'previous-window)
 
@@ -38,6 +55,35 @@
 
 ;; (global-unset-key (kbd "C-g"))
 ;; (global-set-key (kbd "C-g") 'find-file-at-point)
+
+;; (defcustom term-bind-key-alist
+;;   '(
+;;     ("C-c" . term-interrupt-subjob)
+;;     ("<escape>" . previous-window)
+;;     ("C-t" . 'multi-term-dedicated-close)
+;;     ;; ("C-n" . next-line)
+;;     ;; ("C-s" . isearch-forward)
+;;     ;; ("C-r" . isearch-backward)
+;;     ;; ("C-m" . term-send-return)
+;;     ;; ("C-y" . term-paste)
+;;     ;; ("M-f" . term-send-forward-word)
+;;     ;; ("M-b" . term-send-backward-word)
+;;     ;; ("M-o" . term-send-backspace)
+;;     ;; ("M-p" . term-send-up)
+;;     ;; ("M-n" . term-send-down)
+;;     ;; ("M-M" . term-send-forward-kill-word)
+;;     ;; ("M-N" . term-send-backward-kill-word)
+;;     ;; ("<C-backspace>" . term-send-backward-kill-word)
+;;     ;; ("M-r" . term-send-reverse-search-history)
+;;     ;; ("M-d" . term-send-delete-word)
+;;     ;; ("M-," . term-send-raw)
+;;     ("M-." . comint-dynamic-complete)
+;;     )
+;;   "The key alist that will need to be bind.
+;; If you do not like default setup, modify it, with (KEY . COMMAND) format."
+;;   :type 'alist
+;;   :group 'multi-term)
+
 
 (global-unset-key (kbd "C-p"))
 (global-set-key (kbd "C-p") 'switch-to-buffer)
@@ -92,11 +138,21 @@
 ;;(define-key treemacs-mode-map (kbd "b") 'treemacs-bookmark)
 ;;(define-key treemacs-mode-map (kbd "b") 'bookmark-set)
 
-(global-unset-key (kbd "C-t"))
-(global-set-key (kbd "C-t") 'treemacs-select-window)
+;; (global-unset-key (kbd "C-m"))
+;; (global-set-key (kbd "C-m") 'treemacs-select-window)
 
-(global-unset-key (kbd "C-S-t"))
-(global-set-key (kbd "C-S-t") 'treemacs)
+
+(define-key input-decode-map [?\C-m] [C-m])
+;; now we can do this:
+(defun notRET ()
+  (interactive)
+  (message "C-m is not the same as RET any more!"))
+
+(global-unset-key (kbd "<C-m>"))
+(global-set-key (kbd "<C-m>") 'treemacs-select-window)
+
+(global-unset-key (kbd "C-S-m"))
+(global-set-key (kbd "C-S-m") 'treemacs)
 
 (global-unset-key (kbd "M-S-<right>"))
 (global-set-key (kbd "M-S-<right>") 'next-buffer)

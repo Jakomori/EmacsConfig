@@ -3,7 +3,6 @@
 ;; I'm sorry you have to see this
 
 
-
 ;; Write customization made throught "customize" in "customized.el"
 (setq custom-file "~/.emacs.d/custom/customized.el")
 ;; Load the customization file "customized.el"
@@ -25,9 +24,9 @@
 (load-file "~/.emacs.d/custom/corfu.el")
 
 
-(straight-use-package
-  '(nano-emacs :type git :host github :repo "rougier/nano-emacs"))
-(setq nano-font-family-monospaced "Roboto Mono")
+;; (straight-use-package
+;;   '(nano-emacs :type git :host github :repo "rougier/nano-emacs"))
+;; (setq nano-font-family-monospaced "Roboto Mono")
 
 
 (use-package emacs
