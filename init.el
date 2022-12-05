@@ -19,9 +19,6 @@
 ;; Loading "theme.el", where the theme is set (I used spacemacs-dark)
 (load-file "~/.emacs.d/custom/theme.el")
 
-;;;; Loading "enviroment.el", where the gui preference are set
-(load-file "~/.emacs.d/custom/treemacs-icons-dired.el")
-
 ;; Loading "corfu.el". It sets "corfu", an auto completition utility 
 (load-file "~/.emacs.d/custom/corfu.el")
 (load-file "~/.emacs.d/custom/emacs.el")
@@ -33,6 +30,7 @@
 (load-file "~/.emacs.d/custom/projectile.el")
 (load-file "~/.emacs.d/custom/origami.el")
 (load-file "~/.emacs.d/custom/treemacs.el")
+(load-file "~/.emacs.d/custom/treemacs-icons-dired.el")
 (load-file "~/.emacs.d/custom/multi-term.el")
 (load-file "~/.emacs.d/custom/flymake.el")
 (load-file "~/.emacs.d/custom/vterm.el")
