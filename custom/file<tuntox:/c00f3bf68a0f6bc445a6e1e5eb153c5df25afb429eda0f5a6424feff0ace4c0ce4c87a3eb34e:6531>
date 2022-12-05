@@ -1,0 +1,67 @@
+
+
+
+      (use package consult
+define-key xah-fly-command-map (kbd "j") 'kill-ring-save) ;; copy
+  (define-key xah-fly-command-map (kbd "j") 'whole-line-or-region-kill-ring-save) ;; copy
+  (use-package consult
+jgarrea
+  oeaie
+  ieái,.pa
+  ttttt  eia,.pioe
+
+ (oeaie
+  euao
+  oeaiemu)iaoeioeaieud
+togli C-= e C-- e metti qualcosa di utile ()
+C-- e C-/ sono undo redo?
+C-t serve hippie exp?
+C-n serve new empty buffer?
+C-m serve newline?
+
+
+
+
+  d
+  aoeigoeauicaoeruiipdgiaoreudkaoe
+
+  ´  ieái,.pa
+gyuioea
+  iaoeioeaiea
+
+
+void main (){
+
+  }
+undo-fu-only-undoundo-fu-only-undoundo-fu-only-undoundo-fu-only-undoundo-fu-only-undoundo-fu-only-undoundo-fu-only-undoundo-fu-only-undo
+undo-fu-only-undo
+
+
+  studia:
+    space c *
+    space n *
+
+  nota:
+    hippie exp
+    winner-mode
+    reformat
+
+  // cut
+  // copy
+  // paste
+  // isearch
+  // next win
+
+  // mark
+  // undo
+  // other frame
+  // split
+  // unsplit
+  // embark
+
+  // ag
+
+  // https://www.emacswiki.org/emacs/framemove.el
+ciao j
+
+  

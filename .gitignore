@@ -12,7 +12,7 @@
 !init.el
 #	whithout this I dont't think anything here would be of any use
 
-!custom/*.el
+!custom/
 #	I prefer to have a shorter init, and load file for specific tasks
 
 !Makefile
