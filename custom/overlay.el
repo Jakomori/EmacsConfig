@@ -52,3 +52,13 @@
 ;;       (menu-bar-mode -1)
 ;;       (setq show_menu 0))
 ;;      )))
+
+
+;; Move the backup fies to user-emacs-directory/.backup
+(setq backup-directory-alist `(("." . ,(expand-file-name ".backup" user-emacs-directory))))
+;; Make many backups to stay safe
+(setq delete-old-versions t
+      kept-new-versions 6
+      kept-old-versions 2
+      version-control t
+      backup-by-copying-when-linked t)
