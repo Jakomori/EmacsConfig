@@ -13,7 +13,7 @@
 !jinit.el
 #	whithout this I dont't think anything here would be of any use
 
-!custom/
+!custom/*.el
 #	I prefer to have a shorter init, and load file for specific tasks
 
 !Makefile
@@ -21,3 +21,9 @@
 
 !cppf/**
 #	in case of some new cpp project
+
+!custom/*.el
+*/**~
+*~
+
+' *Treemacs-Scoped-Buffer*'*
