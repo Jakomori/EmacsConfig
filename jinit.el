@@ -4,7 +4,6 @@
 ;;(setq config "~/.emacs.d/custom")
 
 
-
 ;; Write customization made throught "customize" in "customized.el"
 (setq custom-file "~/.emacs.d/custom/customized.el")
 ;; Load the customization file "customized.el"
@@ -35,6 +34,13 @@
 (load-file "~/.emacs.d/custom/dabbrev.el")
 (load-file "~/.emacs.d/custom/cape.el")
 (load-file "~/.emacs.d/custom/vertico.el")
+
+;; (use-package 'persp-mode
+;;   :ensure
+;;   :
+
+;;(switch-to-buffer-other-window
+
 
 ;; Loading "developenv.el", that sets the global development enviroment
 (load-file "~/.emacs.d/custom/projectile.el")
