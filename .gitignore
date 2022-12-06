@@ -10,6 +10,7 @@
 #	well, I guess this is important
 
 !init.el
+!jinit.el
 #	whithout this I dont't think anything here would be of any use
 
 !custom/*.el
@@ -21,6 +22,7 @@
 !cppf/**
 #	in case of some new cpp project
 
+!custom/*.el
 */**~
 *~
 
