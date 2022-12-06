@@ -1,8 +1,6 @@
 
 ;;Emacs Default
 
-
-
 (global-unset-key (kbd "C-y"))
 (global-set-key (kbd "C-y") 'yank)
 
@@ -15,11 +13,11 @@
 (global-unset-key (kbd "C-S-z"))
 (global-set-key (kbd "C-S-z") 'undo-fu-only-redo)
 
-(global-unset-key (kbd "C-f"))
-(global-set-key (kbd "C-f") 'isearch-forward)
-
 (global-unset-key (kbd "C-s"))
-(global-set-key (kbd "C-s") 'suspend-frame)
+(global-set-key (kbd "C-s") 'isearch-forward)
+
+;; (global-unset-key (kbd "C-s"))
+;; (global-set-key (kbd "C-s") 'suspend-frame)
 
 ;; (global-unset-key (kbd "M-w"))
 ;; (global-set-key (kbd "M-w") 'killing-ring-save)
@@ -33,8 +31,23 @@
 (global-unset-key (kbd "C--"))
 (global-set-key (kbd "C--") 'undo-fu-only-redo)
 
-(global-unset-key (kbd "C-n"))
-(global-set-key (kbd "C-n") 'split-window-horizontally)
+(global-unset-key (kbd "C-z"))
+(global-set-key (kbd "C-z") 'undo-fu-only-undo)
+
+(global-unset-key (kbd "C-Z"))
+(global-set-key (kbd "C-Z") 'undo-fu-only-redo)
+
+(global-unset-key (kbd "C-x <right>"))
+(global-set-key (kbd "C-x <right>") 'split-window-right)
+
+(global-unset-key (kbd "C-x <left>"))
+(global-set-key (kbd "C-x <left>") 'split-window-left)
+
+(global-unset-key (kbd "C-x <down>"))
+(global-set-key (kbd "C-x <down>") 'split-window-below)
+
+(global-unset-key (kbd "C-x <up>"))
+(global-set-key (kbd "C-x <up>") 'split-window-preferred-function)
 
 ;;(global-unset-key (kbd "C-n"))
 ;;(global-set-key (kbd "C-n") 'new-window-on-right)
@@ -84,9 +97,11 @@
 ;;   :type 'alist
 ;;   :group 'multi-term)
 
+(global-unset-key (kbd "C-b"))
+(global-set-key (kbd "C-b") 'switch-to-buffer)
 
-(global-unset-key (kbd "C-p"))
-(global-set-key (kbd "C-p") 'switch-to-buffer)
+(global-unset-key (kbd "C-S-b"))
+(global-set-key (kbd "C-S-b") 'kill-buffer)
 
 (global-unset-key (kbd "M-<left>"))
 (global-set-key (kbd "M-<left>") 'windmove-left)
@@ -102,9 +117,6 @@
 
 (global-unset-key (kbd "C-k"))
 (global-set-key (kbd "C-k") 'delete-window)
-
-(global-unset-key (kbd "C-S-k"))
-(global-set-key (kbd "C-S-k") 'kill-buffer)
 
 (global-unset-key (kbd "C-+"))
 (global-set-key (kbd "C-+") 'origami-close-node)
@@ -171,7 +183,6 @@
 
 ;; (global-unset-key (kbd "C-S-p"))
 ;; (global-set-key (kbd "C-S-p") 'bmkp-bookmark-list)
-
 
 ;;(global-unset-key (kbd "C-b"))
 ;;(global-set-key (kbd "C-b") 'bkmp-buffer)
