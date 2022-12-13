@@ -70,10 +70,11 @@ $(ODIR)/%.o: %.$(EXT)
 #	"$<" is prerequisite
 
 all: $(OBJS)
-	@if [ ! -d "./objs" ]; then \
-		 mkdir objs; \
-	fi
-	$(COMP) -o $(APP) $(OBJS) $(LIBS)
+	# @if [ ! -d "./objs" ]; then \
+	# 	 mkdir objs; \
+	# fi
+	@mkdir -p objs
+	@$(COMP) -o $(APP) $(OBJS) $(LIBS)
 # "all" is called even without target
 #	used to make the executable file (APP)
 
@@ -91,7 +92,7 @@ clean:
 # used to remove the objects in (ODIR)
 
 focus: $(OBJS)
-	@$(COMP) -o $(APP) $(OBJS)
+	@$(COMP) -o $(APP) $(OBJS) $(LIBS)
 	@clear
 	@printf "\n   .....running [$(APP)].....\n\n"
 	@./$(APP)
@@ -129,7 +130,7 @@ makeupdate:
 # deltemp:
 # 	rm -r $(EMACSTEMP)
 
-newcpp: 
+newcpp:
 	@mkdir -p $(OUTPATH)/cppex
 	@mkdir -p $(EMACSTEMP)
 	@cp -r $(EMACSCPP)/newcpp/* $(EMACSMAKE) $(EMACSTEMP)

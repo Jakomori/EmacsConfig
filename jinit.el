@@ -9,7 +9,7 @@
 ;; now we can do this:
 (defun notRET ()
   (interactive)
-  (message "C-m is not the same as RET any more!"))
+  (message "C-m is not the same as RET any more"))
 
 ;; Write customization made throught "customize" in "customized.el"
 (setq custom-file "~/.emacs.d/custom/customized.el")
@@ -39,7 +39,7 @@
 
 (load-file "~/.emacs.d/custom/emacs.el")
 (global-unset-key (kbd "M-w"))
-(global-set-key (kbd "M-w") 'killing-ring-save)
+(global-set-key (kbd "M-w") 'kill-ring-save)
 (global-unset-key (kbd "C-w"))
 (global-set-key (kbd "C-w") 'kill-region)
 (global-unset-key (kbd "C-y"))
@@ -79,8 +79,16 @@
 (global-unset-key (kbd "C-x <up>"))
 (global-set-key (kbd "C-x <up>") 'split-window-preferred-function)
 
-(global-unset-key (kbd "C-s"))
+(global-unset-key (kbd "C-x S-<right>"))
+(global-set-key (kbd "C-x S-<right>") 'split-window-right)
+(global-unset-key (kbd "C-x S-<left>"))
+(global-set-key (kbd "C-x S-<left>") 'split-window-left)
+(global-unset-key (kbd "C-x S-<down>"))
+(global-set-key (kbd "C-x S-<down>") 'split-window-below)
+(global-unset-key (kbd "C-x S-<up>"))
+(global-set-key (kbd "C-x S-<up>") 'split-window-preferred-function)
 
+(global-unset-key (kbd "C-s"))
 (global-set-key (kbd "C-s") 'isearch-repeat-forward)
 
 (global-unset-key (kbd "C-g"))
@@ -89,6 +97,12 @@
 (global-set-key (kbd "C-S-g") 'find-file-at-point)
 
 (load-file "~/.emacs.d/custom/dabbrev.el")
+
+;; Whole-line-or-region - use whole line for cut/copy when no text is selected
+(load-file "~/.emacs.d/custom/whole-line-or-region.el")
+
+;; Popup-kill-ring - better killing means better paste!
+(load-file "~/.emacs.d/custom/popup-kill-ring.el")
 
 (load-file "~/.emacs.d/custom/cape.el")
 
@@ -116,7 +130,11 @@
 
 (load-file "~/.emacs.d/custom/flymake.el")
 
-;;(load-file "~/.emacs.d/custom/vterm.el")
+;; (load-file "~/.emacs.d/custom/vterm.el")
+;; (global-unset-key (kbd "C-t"))
+;; (global-set-key (kbd "C-t") ')
+;; (global-unset-key (kbd "C-S-t"))
+;; (global-set-key (kbd "C-S-t") 'multi-term-dedicated-close)
 
 (load-file "~/.emacs.d/custom/bookmark+.el")
 
@@ -131,6 +149,8 @@
 (load-file "~/.emacs.d/custom/ggtags.el")
 
 (load-file "~/.emacs.d/custom/undo-fu.el")
+
+(load-file "~/.emacs.d/custom/undo-fu-session.el")
 (global-unset-key (kbd "C-_"))
 (global-set-key (kbd "C-_") 'undo-fu-only-undo)
 (global-unset-key (kbd "C--"))
@@ -140,12 +160,18 @@
 (global-unset-key (kbd "C-S-z"))
 (global-set-key (kbd "C-S-z") 'undo-fu-only-redo)
 
-(load-file "~/.emacs.d/custom/undo-fu-session.el")
-
 (load-file "~/.emacs.d/custom/key-chord.el")
+
+(load-file "~/.emacs.d/custom/icicles.el")
 
 (load-file "~/.emacs.d/custom/use-package-chords.el")
 
 (load-file "~/.emacs.d/custom/globalkb.el")
+
+(load-file "~/.emacs.d/custom/bookmark+.el")
+
+(setq byte-compile-warnings '(cl-functions))
+
+
 
 ;; (provide 'jinit.el)
