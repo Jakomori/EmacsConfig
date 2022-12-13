@@ -1,7 +1,6 @@
 #	Jakomo's Emacs .gitignore
 #	ignored files from git
 
-*~
 /*
 #	actually, I prefer to whitelist them instead
 
@@ -14,17 +13,18 @@
 !jinit.el
 #	whithout this I dont't think anything here would be of any use
 
-!custom/*.el
+!custom/
 #	I prefer to have a shorter init, and load file for specific tasks
 
 !Makefile
 #	just something I like to play with
 
-!cppf/**
+!cppf/
 #	in case of some new cpp project
 
-!custom/**.el
 **~
 *~
+*#
+**#
 
 ' *Treemacs-Scoped-Buffer*'*
