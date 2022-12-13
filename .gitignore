@@ -23,8 +23,8 @@
 !cppf/**
 #	in case of some new cpp project
 
-!custom/*.el
-*/**~
+!custom/**.el
+**~
 *~
 
 ' *Treemacs-Scoped-Buffer*'*
