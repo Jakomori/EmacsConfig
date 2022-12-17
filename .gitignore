@@ -22,6 +22,7 @@
 !cppf/
 #	in case of some new cpp project
 
+!old/
 **~
 *~
 *#

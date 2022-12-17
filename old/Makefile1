@@ -1,0 +1,55 @@
+CXX=clang++-3.5
+CXXFLAGS = -Wall -Werror -std=c++11
+LDLIBS = -lpthread
+
+SOURCES = class01 class02 class03
+
+NAM ?= main
+#	file name
+
+EXT = cpp
+#	file extension
+
+COMP = g++
+#	compiler
+
+SRC = $(NAM).$(EXT)
+#	source file, with [space] in between two of them
+
+APP = main.exe
+#	executable file
+
+ODIR = objs
+# object directory
+
+FLAGS =
+#	other libraries
+
+OBJS = $(patsubst %.$(EXT), $(ODIR)/%.o, $(SRC))
+#	"pathsub" substitute arg 2 to arg 1 in arg 3
+#	save file as objects (.o) to keep track of which are modified
+#	recompile only modified objects
+
+
+LIBS = -lncurses
+# ---
+
+
+%: %.cxx
+    $(CXX) $(CXXFLAGS) -o $@.out $^ $(LDLIBS)
+ifneq (,$(findstring r,  $(MAKEFLAGS)))
+    ./$@.out
+endif
+
+all: $(SOURCES)
+
+.PHONY: clean
+
+clean:
+   find . -name "*.out" -delete
+
+# %: %
+# 	@mkdir -p $(ODIR)
+# 	@$(COMP) -o $(APP) $(OBJS) $(LIBS)
+# # "all" is called even without target
+# used to make the executable file (APP)
