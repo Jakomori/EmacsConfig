@@ -1,166 +1,80 @@
-#	MAKEFILE
+# NAM ?= main
+# #	file name
 
-#	--- DIRECTIVES
+# TARGET = main
 
-OUT ?= ~/Desktop
-IN ?= ./
+# EXT = cpp
+# #	file extension
 
-CPPOUT ?= $(OUT)/cppex
+# COMP = g++
+# #	compiler
 
-EDTRPTH = $(EMACSALL)
+# SRC = $(NAM).$(EXT)
+# #	source file, with [space] in between two of them
 
-EMACSCOREPATH = $(EMACSINIT) $(EMACSCUST) $(EMACSMAKE) $(EMACSCPP) $(GIT) $(GITIGN)
-EMACSCORE = $(INIT) $(CUST) $(MAKEF) $(CPPF) $(GIT) $(GITIGN)
+# APP = main.exe
+# #	executable file
 
-INIT = init.el
-CUST = custom
-MAKEF = Makefile
-CPPF = cppf
-TEMP = temp
-GIT = .git
-GITIGN = .gitignore
+# ODIR = $(NAM)_objs
+# # object directory
 
+# FLAGS =
+# #	other libraries
 
-EMACSINIT =  $(EMACS)/$(INIT)
-EMACSCUST = $(EMACS)/$(CUST)
-EMACSMAKE =  $(EMACS)/$(MAKEF)
-EMACSCPP = $(EMACS)/$(CPPF)
-EMACSTEMP = $(EMACS)/$(TEMP)
-EMACSGITIGN = $(EMACS)/$(GITIGN)
+# OBJS = $(patsubst %.$(EXT), $(ODIR)/%.o, $(SRC))
+# #	"pathsub" substitute arg 2 to arg 1 in arg 3
+# #	save file as objects (.o) to keep track of which are modified
+# #	recompile only modified objects
 
-EMACS = ~/.emacs.d
+# $(ODIR)/%.o: %.$(EXT)
+# 	@mkdir -p $(ODIR)
+# 	@$(COMP) -c -o $@ $< $(FLAGS)
+# # "-c" to compile
+# #	"-o" to rename outupt
+# # "$@"	is target
+# #	"$<" is prerequisite
 
-NAM ?= main
-#	file name
+# all: 	$(OBJS)
+# 	@$(COMP) -o $(APP) $(OBJS)
+# # "all" is called even without target
+# #	used to make the executable file (APP)
 
-EXT = cpp
-#	file extension
+# .PHONY: run clear
+# # ".PHONY" to avoid generating  prerequisite files
 
-COMP = g++
-#	compiler
+# run: all
+# 	./$(APP)
+# # execute "all" and launch (APP)
 
-SRC = $(NAM).$(EXT)
-#	source file, with [space] in between two of them
+# clean:
+# 	rm -f $(ODIR)/*.o
+# # "rm" removes
+# # "-f forces the action
+# # used to remove the objects in (ODIR)
 
-APP = main.exe
-#	executable file
-
-ODIR = $(NAM)_objs
-# object directory
-
-FLAGS =
-#	other libraries
-
-OBJS = $(patsubst %.$(EXT), $(ODIR)/%.o, $(SRC))
-#	"pathsub" substitute arg 2 to arg 1 in arg 3
-#	save file as objects (.o) to keep track of which are modified
-#	recompile only modified objects
+# run $(TARGET): run $(NAM)=$(TARGET) 
 
 
-LIBS = -lncurses
-# ---
+CC = g++
 
-ind ?= 1
+  # compiler flags:
+  #  -g     - this flag adds debugging information to the executable file
+  #  -Wall  - this flag is used to turn on most compiler warnings
+#CFLAGS  = -g -Wall
 
 
-# --- COMMANDS
-# target: prerequisites
-#		commandline
 
-$(ODIR)/%.o: %.$(EXT)
-	$(COMP) -c -o $@ $< $(FLAGS)
-# "-c" to compile
-#	"-o" to rename outupt
-# "$@"	is target
-#	"$<" is prerequisite
+DIR = .
 
-all: $(OBJS)
-	@mkdir -p $(ODIR)
-	@$(COMP) -o $(APP) $(OBJS) $(LIBS)
-# "all" is called even without target
-#	used to make the executable file (APP)
+# all: $(TARGET)
 
-.PHONY: run clear
-# ".PHONY" to avoid generating  prerequisite files
+# $(TARGET): $(TARGET).cpp
+# 	$(CC) $(CFLAGS) -o $(TARGET) $(TARGET).cpp
+# 	./$(TARGET)
 
-run: all
-	./$(APP)
-# execute "all" and launch (APP)
+run:
+	$(CC) $(CFLAGS) -o $(NAM).exe $(NAM).cpp
+	./$(NAM)
 
-clean:
-	rm -f $(ODIR)/*.o
-# "rm" removes
-# "-f forces the action
-# used to remove the objects in (ODIR)
-
-focus: $(OBJS)
-	@$(COMP) -o $(APP) $(OBJS) $(LIBS)
-	@clear
-	@printf "\n   .....running [$(APP)].....\n\n"
-	@./$(APP)
-	@printf "\n   .....[$(APP)] ended.....\n\n"
-#	clean the shell and run the executable
-
-show: $(SRC)
-	@clear
-	@printf "\n .....showing [$(SRC)]..... \n\n"
-	@cat $(SRC)
-	@printf "\n"
-	@printf "\n .....end of [$(SRC)]..... \n\n"
-#clean the shell and show the code of the sources
-
-# emacsout: $(OUT)
-# 	@mkdir -p $(OUT)/emacs
-# 	@cp -r $(EMACSCORE) $(OUT)/emacs
-# 	@find $(OUT)/emacs -name \*~ -type f -delete
-
-# emacsin: $(IN)
-# 	@if [ -d "$(EMACSCORE)" ]; then \
-# 		if [ -d "$(EMACS)" ]; then \
-# 			cp $(EMACS) ~/.emacs.old; \
-# 		fi \
-# 		@mkdir -p $(EMACS); \
-# 		@cp -r $(EMACSCORE) $(EMACS); \
-# 	fi
-
-makeupdate:
-	@cp ./Makefile ~/.emacs.d/Makefile
-
-# buildtemp:
-# 	mkdir -p $(EMACSTEMP)
-
-# deltemp:
-# 	rm -r $(EMACSTEMP)
-
-newcpp:
-	@mkdir -p $(OUT)/cppex
-	@mkdir -p $(EMACSTEMP)
-	@cp -r $(EMACSCPP)/newcpp/* $(EMACSMAKE) $(EMACSTEMP)
-	@cp -r --backup=t $ $(EMACSTEMP) $(OUT)/cppex/es
-	@rm -r $(EMACSTEMP)
-
-emaczip:
-	@make emacsout
-	@zip $(OUTPATH)/emacs.zip $(OUTPATH)/emacs
-
-# newcpp:
-#      ind=1 ; while [[ $$ind -le 255 ]] ; do \
-  	if [! -d "$(CPPOUT)/es$$ind"]; then \
-  		cp -r $(EMACSCPP)/newcpp/* $(EMACSMAKE) $(EMACSTEMP); \
-       		mkdir -p $(CPPOUT)/es$$ind; \
-       		cp -r $ $(EMACSTEMP) $(CPPOUT)/es$$ind/; \
-       		rm -r $(EMACSTEMP); \
-       		((ind = ind = 254)); \
-       	fi; \
-           ((ind = ind + 1)) ; \
-    	 done
-op:
-    num1=1 ; while [[ $$num1 -le 4 ]] ; do \
-         num2=1 ; while [[ $$num2 -le 3 ]] ; do \
-             echo $$num1 $$num2 ; \
-             ((num2 = num2 + 1)) ; \
-         done ; \
-         ((num1 = num1 + 1)) ; \
-     done
-
-# ---
+select $(TARGET): 
+	make run NAM="${TARGET}"

@@ -19,7 +19,7 @@
 !Makefile
 #	just something I like to play with
 
-!cppf/
+!resources/
 #	in case of some new cpp project
 
 !old/

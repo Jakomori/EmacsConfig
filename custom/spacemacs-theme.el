@@ -3,8 +3,8 @@
   :init (load-theme 'spacemacs-dark)
   :config
   (setq spacemacs-theme-comment-italic t))
-(set-frame-parameter (selected-frame) 'alpha '(100 85))
-(add-to-list 'default-frame-alist '(alpha 100 85))
+(set-frame-parameter (selected-frame) 'alpha '(100 100))
+(add-to-list 'default-frame-alist '(alpha 100 100))
 ;;(load-theme 'spacemacs-theme t)
 
 

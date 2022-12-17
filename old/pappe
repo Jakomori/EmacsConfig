@@ -2,8 +2,10 @@
 
 #	--- DIRECTIVES
 
-OUTPATH = ~/Desktop
-INPATH = ./
+OUT ?= ~/Desktop
+IN ?= ./
+
+CPPOUT ?= $(OUT)/cppex
 
 EDTRPTH = $(EMACSALL)
 
@@ -28,7 +30,7 @@ EMACSGITIGN = $(EMACS)/$(GITIGN)
 
 EMACS = ~/.emacs.d
 
-NAM = main
+NAM ?= main
 #	file name
 
 EXT = cpp
@@ -40,7 +42,7 @@ COMP = g++
 SRC = $(NAM).$(EXT)
 #	source file, with [space] in between two of them
 
-APP = $(NAM).exe
+APP = main.exe
 #	executable file
 
 ODIR = $(NAM)_objs
@@ -58,23 +60,22 @@ OBJS = $(patsubst %.$(EXT), $(ODIR)/%.o, $(SRC))
 LIBS = -lncurses
 # ---
 
+ind ?= 1
+
+
 # --- COMMANDS
 # target: prerequisites
 #		commandline
 
 $(ODIR)/%.o: %.$(EXT)
-	@rmdir -r $(ODIR)
-	@mkdir -p $(ODIR)
-	@$(COMP) -c -o $@ $< $(FLAGS)
+	$(COMP) -c -o $@ $< $(FLAGS)
 # "-c" to compile
 #	"-o" to rename outupt
 # "$@"	is target
 #	"$<" is prerequisite
 
 all: $(OBJS)
-# @if [ ! -d "./objs" ]; then \
-#	 mkdir objs; \
-# fi
+	@mkdir -p $(ODIR)
 	@$(COMP) -o $(APP) $(OBJS) $(LIBS)
 # "all" is called even without target
 #	used to make the executable file (APP)
@@ -92,14 +93,15 @@ clean:
 # "-f forces the action
 # used to remove the objects in (ODIR)
 
-focus: all
+focus: $(OBJS)
+	@$(COMP) -o $(APP) $(OBJS) $(LIBS)
 	@clear
 	@printf "\n   .....running [$(APP)].....\n\n"
 	@./$(APP)
 	@printf "\n   .....[$(APP)] ended.....\n\n"
 #	clean the shell and run the executable
 
-show:
+show: $(SRC)
 	@clear
 	@printf "\n .....showing [$(SRC)]..... \n\n"
 	@cat $(SRC)
@@ -107,39 +109,58 @@ show:
 	@printf "\n .....end of [$(SRC)]..... \n\n"
 #clean the shell and show the code of the sources
 
+# emacsout: $(OUT)
+# 	@mkdir -p $(OUT)/emacs
+# 	@cp -r $(EMACSCORE) $(OUT)/emacs
+# 	@find $(OUT)/emacs -name \*~ -type f -delete
+
+# emacsin: $(IN)
+# 	@if [ -d "$(EMACSCORE)" ]; then \
+# 		if [ -d "$(EMACS)" ]; then \
+# 			cp $(EMACS) ~/.emacs.old; \
+# 		fi \
+# 		@mkdir -p $(EMACS); \
+# 		@cp -r $(EMACSCORE) $(EMACS); \
+# 	fi
+
 makeupdate:
 	@cp ./Makefile ~/.emacs.d/Makefile
 
 # buildtemp:
-#	mkdir -p $(EMACSTEMP)
+# 	mkdir -p $(EMACSTEMP)
 
 # deltemp:
-#	rm -r $(EMACSTEMP)
+# 	rm -r $(EMACSTEMP)
 
-# newcpp:
-
-# 	@mkdir -p $(OUTPATH)/cppex
-# 	@mkdir -p $(EMACSTEMP)
-# 	@cp -r $(EMACSCPP)/newcpp/* $(EMACSMAKE) $(EMACSTEMP)
-# 	@cp -r --backup=t $ $(EMACSTEMP) $(OUTPATH)/cppex/es
-# 	@rm -r $(EMACSTEMP)
+newcpp:
+	@mkdir -p $(OUT)/cppex
+	@mkdir -p $(EMACSTEMP)
+	@cp -r $(EMACSCPP)/newcpp/* $(EMACSMAKE) $(EMACSTEMP)
+	@cp -r --backup=t $ $(EMACSTEMP) $(OUT)/cppex/es
+	@rm -r $(EMACSTEMP)
 
 emaczip:
 	@make emacsout
 	@zip $(OUTPATH)/emacs.zip $(OUTPATH)/emacs
 
-newcpp:
-	ind=1 ; while [[ $$ind -le 255 ]] ; do \
-		[ if ! -d (OUTPATH)/cppex/es$$ind ]; then \
-			mkdir -p $(OUTPATH)/cppex/es$$ind; \
-			mkdir -p $(EMACSTEMP); \
-			cp -r $(EMACSCPP)/newcpp/* $(EMACSMAKE) $(EMACSTEMP); \
-			cp -r --backup=t $ $(EMACSTEMP) $(OUTPATH)/cppex/es$$ind; \
-			rm -r $(EMACSTEMP); \
-			((ind = 254)); \
-		fi; \
-		((ind = ind + 1)) ; \
-	done
+# newcpp:
+#      ind=1 ; while [[ $$ind -le 255 ]] ; do \
+  	if [! -d "$(CPPOUT)/es$$ind"]; then \
+  		cp -r $(EMACSCPP)/newcpp/* $(EMACSMAKE) $(EMACSTEMP); \
+       		mkdir -p $(CPPOUT)/es$$ind; \
+       		cp -r $ $(EMACSTEMP) $(CPPOUT)/es$$ind/; \
+       		rm -r $(EMACSTEMP); \
+       		((ind = ind = 254)); \
+       	fi; \
+           ((ind = ind + 1)) ; \
+    	 done
+op:
+    num1=1 ; while [[ $$num1 -le 4 ]] ; do \
+         num2=1 ; while [[ $$num2 -le 3 ]] ; do \
+             echo $$num1 $$num2 ; \
+             ((num2 = num2 + 1)) ; \
+         done ; \
+         ((num1 = num1 + 1)) ; \
+     done
 
 # ---
-

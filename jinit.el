@@ -171,7 +171,3 @@
 (load-file "~/.emacs.d/custom/bookmark+.el")
 
 (setq byte-compile-warnings '(cl-functions))
-
-
-
-;; (provide 'jinit.el)
