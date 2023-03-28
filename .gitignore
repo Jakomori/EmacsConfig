@@ -4,23 +4,22 @@
 /*
 #	actually, I prefer to whitelist them instead
 
-
-
 !.gitignore
 #	well, I guess this is important
 
 !init.el
 !jinit.el
-#	whithout this I dont't think anything here would be of any use
+#	whithout these I dont't think anything here would be of any use
 
 !custom/
-#	I prefer to have a shorter init, and load file for specific tasks
+#	I prefer to have a shorter init, and load file for specific packages
 
 !Makefile
+!makefiles/
 #	just something I like to play with
 
 !resources/
-#	in case of some new cpp project
+#	in case of any new project
 
 !old/
 **~

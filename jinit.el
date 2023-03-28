@@ -170,4 +170,9 @@
 
 (load-file "~/.emacs.d/custom/bookmark+.el")
 
+(load-file "~/.emacs.d/custom/magit.el")
+
+(global-unset-key (kbd "C-c g"))
+(global-set-key (kbd "C-c g") 'magit-file-dispatch)
+
 (setq byte-compile-warnings '(cl-functions))

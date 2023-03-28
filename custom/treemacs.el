@@ -26,7 +26,7 @@
 (treemacs-project-follow-mode)
 (treemacs-display-current-project-exclusively)
 ;; (dired-jump 'treemacs-visit-node-default)
-(projectile-reset-known-projects)
+;;---(projectile-reset-known-projects)
 (kill-current-buffer)
 (add-hook 'treemacs-mode-hook (lambda() (display-line-numbers-mode -1)))
 
