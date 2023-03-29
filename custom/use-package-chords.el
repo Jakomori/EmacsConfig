@@ -1,5 +1,6 @@
 (use-package use-package-chords
   ;; :disabled
+  :ensure
   :diminish
   :config
   (key-chord-mode 1)

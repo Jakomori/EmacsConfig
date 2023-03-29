@@ -1,25 +1,5 @@
 #Makefile for generic programming enviroment
 
-$(ODIR)/%.o:
-	@%.$(EXT)
-	@rmdir -r $(ODIR)
-	@mkdir -p $(ODIR)
-	@$(COMP) -c -o $@ $< $(FLAGS)
-# 	"-c" to compile
-#	"-o" to rename outupt
-# 	"$@" is target
-#	"$<" is prerequisite
-
-all:
-	@$(COMP) $(NAM).$(EXT) -o $(APP) $(LIBS)
-
-# all:
-# 	@$(OBJS)
-# 	@mkdir -p objs
-# 	@$(COMP) -o $(APP) $(OBJS) $(FLAGS) $(LIBS)
-# # 	"all" is called even without target
-# #	used to make the executable file (APP)
-
 .PHONY:	#Run the app without maintaining prerequisite files
 	@make run
 	@make clean

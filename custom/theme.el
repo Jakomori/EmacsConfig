@@ -1,4 +1,5 @@
 (use-package spacemacs-theme
+  :ensure
   :defer t
   :init (load-theme 'spacemacs-dark)
   :config

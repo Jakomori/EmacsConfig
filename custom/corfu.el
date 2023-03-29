@@ -1,4 +1,5 @@
 (use-package corfu
+  :ensure
   :straight (:files (:defaults "extensions/*")
                     :includes (corfu-indexed
                                corfu-history

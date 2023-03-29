@@ -1,1 +1,1 @@
-(load-file "~/.emacs.d/jinit.el")
+(load-file "~/.emacs.d/inits/jinit.el")

@@ -8,7 +8,7 @@
 #	well, I guess this is important
 
 !init.el
-!jinit.el
+!inits/jinit.el
 #	whithout these I dont't think anything here would be of any use
 
 !custom/

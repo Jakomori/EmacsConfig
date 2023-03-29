@@ -2,7 +2,7 @@
 
 name = "cpp/es"
 
-newcpp:
+cppnew:
 	@mkdir -p $(OUTPATH)/$(name)
 #	@cp -r $(ECPP) $(EMK) $(OUTPATH)/$(name)
 	@cp -r $(ECPP) $(EMK) $(OUTPATH)/$(name)
@@ -19,3 +19,22 @@ newcpp:
 # 		((ind = ind + 1)) ; \
 # 	done
 
+$(ODIR)/%.o:
+	@%.$(EXT)
+	@rmdir -r $(ODIR)
+	@mkdir -p $(ODIR)
+	@$(COMP) -c -o $@ $< $(FLAGS)
+# 	"-c" to compile
+#	"-o" to rename outupt
+# 	"$@" is target
+#	"$<" is prerequisite
+
+cppbuild:
+	@$(COMP) $(NAM).$(EXT) -o $(APP) $(LIBS)
+
+# all:
+# 	@$(OBJS)
+# 	@mkdir -p objs
+# 	@$(COMP) -o $(APP) $(OBJS) $(FLAGS) $(LIBS)
+# # 	"all" is called even without target
+# #	used to make the executable file (APP)

@@ -1,8 +1,6 @@
 #	MAKEFILE
 
--include ~/.emacs.d/makefiles/makecpp.mk
--include ~/.emacs.d/makefiles/makeprogram.mk
--include ~/.emacs.d/makefiles/makeemacs.mk
+-include ~/.emacs.d/makefiles/_list.mk
 
 name = "cpp/es"
 
@@ -39,3 +37,6 @@ OBJS = $(patsubst %.$(EXT), $(ODIR)/%.o, $(SRC))
 #	"pathsub" substitute arg 2 to arg 1 in arg 3
 #	save file as objects (.o) to keep track of which are modified
 #	recompile only modified objects
+
+all:
+	@make cppbuild

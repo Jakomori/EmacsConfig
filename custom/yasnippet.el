@@ -1,4 +1,5 @@
 (use-package yasnippet
+  :ensure
   :diminish yas-minor-mode
   :init
   (use-package yasnippet-snippets
