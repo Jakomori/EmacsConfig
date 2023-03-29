@@ -16,3 +16,14 @@
   (add-hook 'irony-mode-hook 'my-irony-mode-hook)
   (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
   )
+
+(use-package irony-eldoc
+  :ensure)
+
+(use-package flycheck-irony
+  :ensure)
+
+;; (use-package company-iron
+;;   :ensure)
+
+

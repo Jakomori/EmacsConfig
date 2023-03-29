@@ -1,6 +1,9 @@
 ;; by Jakomo
 ;; I'm sorry you have to see this
 
+
+;;install libclang irony-mode for cpp
+
 ;;(global-unset-key (kbd "C-S-p"))
 ;;(global-set-key (kbd "C-S-p") 'projectile-reset-known-projects)
 ;;(global-set-key (kbd "C-S-p") 'treemacs-add-and-display-current-project-exclusively)
@@ -8,8 +11,12 @@
 (define-key input-decode-map [?\C-m] [C-m])
 ;; now we can do this:
 (defun notRET ()
-  (interactive)
-  (message "C-m is not the same as RET any more"))
+  (interactive)	
+  (message "C-m is not the same as RET anymore"))
+
+;; (setq-default indent-tabs-mode nil)
+;; (setq-default tab-width 4)
+;; (setq indent-line-function 'insert-tab)
 
 ;; Write customization made throught "customize" in "customized.el"
 (setq custom-file "~/.emacs.d/custom/customized.el")
@@ -17,8 +24,8 @@
 (load-file custom-file)
 
 (load-file "~/.emacs.d/custom/overlay.el")
-;; (global-set-key (kbd "<f11>") nil)
-;; (global-set-key (kbd "<f11>") 'toggle-frame-maximized)
+;;(global-set-key (kbd "<f11>") nil)
+;;(global-set-key (kbd "<f11>") 'toggle-frame-maximized)
 
 (load-file "~/.emacs.d/custom/package.el")
 
@@ -27,17 +34,24 @@
 (load-file "~/.emacs.d/custom/defvar-straight.el")
 
 (load-file "~/.emacs.d/custom/evil-commentary.el")
+;; Easy comment, command 'comment-region
 
 (load-file "~/.emacs.d/custom/defun-remove-scratch.el")
 
-;;(load-file "~/.emacs.d/custom/nano-theme.el")
+;;(load-file "~/.emacs.d/custom/nano-theme.el")			
 (load-file "~/.emacs.d/custom/spacemacs-theme.el")
- 
-;;---(load-file "~/.emacs.d/custom/corfu.el")
+
+(load-file "~/.emacs.d/custom/corfu.el")
+;;(global-set-key (kbd "RET") 'corfu-quit)
+(define-key corfu-map (kbd "<RET>") 'keyboard-quit)
+;;(define-key corfu-map (kbd "<RET>") 'newline)
+;; ;; (define-key corfu-map "\t" nil)
 
 ;;(load-file "~/.emacs.d/custom/yasnippet.el")
 
 ;;(load-file "~/.emacs.d/custom/lsp-bridge.el")
+
+(load-file "~/.emacs.d/custom/highlight-indent-guides.el")
 
 (load-file "~/.emacs.d/custom/emacs.el")
 (global-unset-key (kbd "M-w"))
@@ -93,12 +107,17 @@
 (global-unset-key (kbd "C-s"))
 (global-set-key (kbd "C-s") 'isearch-repeat-forward)
 
-(global-unset-key (kbd "C-g"))
-(global-set-key (kbd "C-g") 'find-file-other-window)
+;;(global-unset-key (kbd "C-g"))
+;;(global-set-key (kbd "C-g") 'find-file-other-window)
 (global-unset-key (kbd "C-S-g"))
 (global-set-key (kbd "C-S-g") 'find-file-at-point)
 
+(global-unset-key (kbd "C-f"))
+(global-set-key (kbd "C-f") 'isearch-forward)
+
 (load-file "~/.emacs.d/custom/dabbrev.el")
+
+(load-file "~/.emacs.d/custom/orderless.el")
 
 ;;(load-file "~/.emacs.d/custom/fancy-dabbrev.el")
 
@@ -119,6 +138,9 @@
 (load-file "~/.emacs.d/custom/projectile.el")
 
 (load-file "~/.emacs.d/custom/origami.el")
+;; fold text regions
+
+(load-file "~/.emacs.d/custom/rainbow-delimiters.el")
 
 (load-file "~/.emacs.d/custom/treemacs.el")
 (global-unset-key (kbd "<C-m>"))
@@ -128,7 +150,7 @@
 (define-key treemacs-mode-map (kbd "<left>") 'treemacs-root-up)
 (define-key treemacs-mode-map (kbd "<right>") 'treemacs-root-down)
 
-(load-file "~/.emacs.d/custom/treemacs-icons-dired.el")
+;;(load-file "~/.emacs.d/custom/treemacs-icons-dired.el")
 
 (load-file "~/.emacs.d/custom/multi-term.el")
 (global-unset-key (kbd "C-t"))
@@ -138,23 +160,30 @@
 
 (load-file "~/.emacs.d/custom/flymake.el")
 
-;; (load-file "~/.emacs.d/custom/vterm.el")
-;; (global-unset-key (kbd "C-t"))
-;; (global-set-key (kbd "C-t") ')
-;; (global-unset-key (kbd "C-S-t"))
-;; (global-set-key (kbd "C-S-t") 'multi-term-dedicated-close)
+;;(load-file "~/.emacs.d/custom/vterm.el")
+;;(global-unset-key (kbd "C-t"))
+;;(global-set-key (kbd "C-t") ')
+;;(global-unset-key (kbd "C-S-t"))
+;;(global-set-key (kbd "C-S-t") 'multi-term-dedicated-close)
 
-(load-file "~/.emacs.d/custom/bookmark+.el")
+;;(load-file "~/.emacs.d/custom/minimap.el")
 
-(load-file "~/.emacs.d/custom/minimap.el")
+;;(load-file "~/.emacs.d/custom/which-key.el")
 
-(load-file "~/.emacs.d/custom/which-key.el")
+;;(load-file "~/.emacs.d/custom/aggressive-indent.el")
+
+(load-file "~/.emacs.d/custom/defun-indent-buffer.el")
+(global-set-key (kbd "S-<iso-lefttab>") 'indent-buffer)
+
+(load-file "~/.emacs.d/custom/rainbow-delimiters.el")
 
 (load-file "~/.emacs.d/custom/crdt.el")
 
 (load-file "~/.emacs.d/custom/savehist.el")
 
-(load-file "~/.emacs.d/custom/ggtags.el")
+(load-file "~/.emacs.d/custom/marginalia.el")
+
+;;(load-file "~/.emacs.d/custom/ggtags.el")
 
 (load-file "~/.emacs.d/custom/undo-fu.el")
 
@@ -168,19 +197,21 @@
 (global-unset-key (kbd "C-S-z"))
 (global-set-key (kbd "C-S-z") 'undo-fu-only-redo)
 
-(load-file "~/.emacs.d/custom/key-chord.el")
+;;(load-file "~/.emacs.d/custom/key-chord.el")
 
-(load-file "~/.emacs.d/custom/icicles.el")
+;;(load-file "~/.emacs.d/custom/icicles.el")
 
-(load-file "~/.emacs.d/custom/use-package-chords.el")
+;;(load-file "~/.emacs.d/custom/use-package-chords.el")
 
 (load-file "~/.emacs.d/custom/globalkb.el")
 
-(load-file "~/.emacs.d/custom/bookmark+.el")
+;;(load-file "~/.emacs.d/custom/bookmark+.el")
 
-(load-file "~/.emacs.d/custom/magit.el")
+;;(load-file "~/.emacs.d/custom/magit.el")
 
 (global-unset-key (kbd "C-c g"))
 (global-set-key (kbd "C-c g") 'magit-file-dispatch)
+
+(load-file "~/.emacs.d/custom/dedicated-window.el")
 
 (setq byte-compile-warnings '(cl-functions))

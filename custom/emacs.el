@@ -31,3 +31,4 @@
   (treemacs-indentation 2)
   (treemacs-indentation-string " ")
   )
+;; (setq electric-indent-mode 't)
