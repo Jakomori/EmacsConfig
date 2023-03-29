@@ -1,4 +1,4 @@
-(load-file "~/.emacs.d/jinit.el")
+(load-file "~/.emacs.d/inits/jinit.el")
 
 ;; (custom-set-variables
 ;;  '(display-buffer-alist
