@@ -1,13 +1,13 @@
 #	MAKEFILE
 
-#	--- DIRECTIVES
+-include ~/.emacs.d/makefiles/makecpp.mk
+-include ~/.emacs.d/makefiles/makeprogram.mk
+-include ~/.emacs.d/makefiles/makeemacs.mk
 
--include makefiles/makecpp.mk
--include makefiles/makeprogram.mk
--include makefiles/makeemacs.mk
+name = "cpp/es"
 
 NAM = main
-#	File name
+#	Compiling file name
 
 EXT = cpp
 #	File extension

@@ -1,12 +1,11 @@
 #Makefile for CPP projects
 
-newcpp:
-	@mkdir -p $(OUTPATH)/cppex/es
-	@mkdir -p $(ETMP)
-	@cp -r $(ECPP) $(EMK) $(ETMP)
-	@cp -r $(ETMP) $(OUTPATH)/cppex/es
-	@rm -rf $(ETMP)
+name = "cpp/es"
 
+newcpp:
+	@mkdir -p $(OUTPATH)/$(name)
+#	@cp -r $(ECPP) $(EMK) $(OUTPATH)/$(name)
+	@cp -r $(ECPP) $(EMK) $(OUTPATH)/$(name)
 # newcpp:
 # 	ind=1 ; while [[ $$ind -le 255 ]] ; do \
 # 		[ if ! -d (OUTPATH)/cppex/es$$ind ]; then \

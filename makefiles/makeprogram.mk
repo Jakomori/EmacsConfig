@@ -11,18 +11,21 @@ $(ODIR)/%.o:
 #	"$<" is prerequisite
 
 all:
-	@$(OBJS)
-	@mkdir -p objs
-	@$(COMP) -o $(APP) $(OBJS) $(FLAGS) $(LIBS)
-# 	"all" is called even without target
-#	used to make the executable file (APP)
+	@$(COMP) $(NAM).$(EXT) -o $(APP) $(LIBS)
+
+# all:
+# 	@$(OBJS)
+# 	@mkdir -p objs
+# 	@$(COMP) -o $(APP) $(OBJS) $(FLAGS) $(LIBS)
+# # 	"all" is called even without target
+# #	used to make the executable file (APP)
 
 .PHONY:	#Run the app without maintaining prerequisite files
-	@run
-	@clean
+	@make run
+	@make clean
 
 run:	#Execute "all" and run the app
-	@all
+	@make all
 	@./$(APP)
 
 clean:	#Delete the prerequisite files
@@ -32,7 +35,7 @@ clean:	#Delete the prerequisite files
 #	Used to remove the objects in (ODIR)
 
 focus:	#Clear the shell and execute the app
-	@all
+	@make all
 	@clear
 	@printf "\n   .....running [$(APP)].....\n\n"
 	@./$(APP)
