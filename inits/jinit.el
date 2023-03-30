@@ -215,3 +215,7 @@
 (load-file "~/.emacs.d/custom/dedicated-window.el")
 
 (setq byte-compile-warnings '(cl-functions))
+
+(load-file "~/.emacs.d/custom/defun-toggle-menu.el")
+(global-unset-key (kbd "<f11>"))
+(global-set-key (kbd "<f11>") 'menu-toggle)
