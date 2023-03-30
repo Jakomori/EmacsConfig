@@ -219,3 +219,7 @@
 (load-file "~/.emacs.d/custom/defun-toggle-menu.el")
 (global-unset-key (kbd "<f11>"))
 (global-set-key (kbd "<f11>") 'menu-toggle)
+
+(global-unset-key (kbd "<f2>"))
+(global-set-key (kbd "<f2>") 'utility-toggle)
+

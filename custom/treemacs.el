@@ -89,4 +89,4 @@
 
 ;; Do not ask for project-root when opening non-project file [or it should]
 (setq projectile-require-project-root nil) 
-(save-selected-window (treemacs-select-window))
+;;------------- START WITH OPEN EMACS (save-selected-window (treemacs-select-window))

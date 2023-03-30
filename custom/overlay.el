@@ -13,7 +13,7 @@
 
 ;; Vertical Scrolling
 (setq scroll-step 1)
-(setq scroll-margin 5)
+;;(setq scroll-margin 5)
 
 ;; ;;Removes *scratch* from buffer after the mode has been set.
 ;; (defun remove-scratch-buffer ()
