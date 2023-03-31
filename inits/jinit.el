@@ -1,6 +1,7 @@
 ;; by Jakomo
 ;; I'm sorry you have to see this
 
+;(setq warning-minimum-level :minimum)
 
 ;;install libclang irony-mode for cpp
 
@@ -22,6 +23,8 @@
 (setq custom-file "~/.emacs.d/custom/customized.el")
 ;; Load the customization file "customized.el"
 (load-file custom-file)
+
+
 
 (load-file "~/.emacs.d/custom/overlay.el")
 ;;(global-set-key (kbd "<f11>") nil)
@@ -223,6 +226,7 @@
 (load-file "~/.emacs.d/custom/globalkb.el")
 ;; Customized Keybindings
 
+
 ;;(load-file "~/.emacs.d/custom/bookmark+.el")
 
 ;;(load-file "~/.emacs.d/custom/magit.el")
@@ -235,6 +239,12 @@
 ;;(load-file "~/.emacs.d/custom/dedicated-window.el")
 
 (setq byte-compile-warnings '(cl-functions))
+(setq byte-compile-warnings '(not obsolete))
+;; (defun my-package-recompile()
+;;   "Recompile all packages"
+;;   (interactive)
+;;   (byte-recompile-directory "~/.emacs.d/elpa" 0 t))
+
 
 (load-file "~/.emacs.d/custom/defun-toggle-menu.el")
 (global-unset-key (kbd "<f11>"))
@@ -244,7 +254,6 @@
 (global-set-key (kbd "<f2>") 'utility-toggle)
 
 ;;(define-key ibuffer-mode-map (kbd "<RET>") 'display-buffer-in-previous-window)
-
 
 
 
