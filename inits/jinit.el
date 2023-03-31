@@ -28,20 +28,28 @@
 ;;(global-set-key (kbd "<f11>") 'toggle-frame-maximized)
 
 (load-file "~/.emacs.d/custom/package.el")
+;; Set-up the package manager for the first installation 
 
 (load-file "~/.emacs.d/custom/packagemanager.el")
+;; Define the used package manager
 
 (load-file "~/.emacs.d/custom/defvar-straight.el")
+;; Replace packet manager with "straight"
+;; Uses more repositories to download packages from
 
 (load-file "~/.emacs.d/custom/evil-commentary.el")
-;; Easy comment, command 'comment-region
+;; Introduce 'comment-region, comment selected region
 
 (load-file "~/.emacs.d/custom/defun-remove-scratch.el")
+;; Function to automatik kill *scratch* buffer
 
 ;;(load-file "~/.emacs.d/custom/nano-theme.el")			
 (load-file "~/.emacs.d/custom/spacemacs-theme.el")
+;; Default theme
 
 (load-file "~/.emacs.d/custom/corfu.el")
+;; Integration for autocompletion, works with dabbrev
+
 ;;(global-set-key (kbd "RET") 'corfu-quit)
 (define-key corfu-map (kbd "<RET>") 'keyboard-quit)
 ;;(define-key corfu-map (kbd "<RET>") 'newline)
@@ -52,6 +60,7 @@
 ;;(load-file "~/.emacs.d/custom/lsp-bridge.el")
 
 (load-file "~/.emacs.d/custom/highlight-indent-guides.el")
+;; Brackets color-coded
 
 (load-file "~/.emacs.d/custom/emacs.el")
 (global-unset-key (kbd "M-w"))
