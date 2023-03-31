@@ -60,7 +60,7 @@
 ;;(load-file "~/.emacs.d/custom/lsp-bridge.el")
 
 (load-file "~/.emacs.d/custom/highlight-indent-guides.el")
-;; Brackets color-coded
+;; Brackets higlighted with side characters
 
 (load-file "~/.emacs.d/custom/emacs.el")
 (global-unset-key (kbd "M-w"))
@@ -125,17 +125,21 @@
 (global-set-key (kbd "C-f") 'isearch-forward)
 
 (load-file "~/.emacs.d/custom/dabbrev.el")
+;; Gives info in autocompletion
 
 (load-file "~/.emacs.d/custom/orderless.el")
+;; Allow autocompletion to search without requiring correct spelling
 
 ;;(load-file "~/.emacs.d/custom/fancy-dabbrev.el")
 
 (load-file "~/.emacs.d/custom/irony.el")
+;; Autocompletiotion for CPP (1/2)
 
 (load-file "~/.emacs.d/custom/company.el")
+;; Autocompletiotion for CPP (2/2)
 
-;; Whole-line-or-region - use whole line for cut/copy when no text is selected
 (load-file "~/.emacs.d/custom/whole-line-or-region.el")
+;; Use whole line for cut/copy when no text is selected
 
 ;; Popup-kill-ring - better killing means better paste!
 (load-file "~/.emacs.d/custom/popup-kill-ring.el")
@@ -147,9 +151,10 @@
 (load-file "~/.emacs.d/custom/projectile.el")
 
 (load-file "~/.emacs.d/custom/origami.el")
-;; fold text regions
+;; Fold text regions
 
 (load-file "~/.emacs.d/custom/rainbow-delimiters.el")
+;; Brackets color-coded
 
 (load-file "~/.emacs.d/custom/treemacs.el")
 (global-unset-key (kbd "<C-m>"))
@@ -168,6 +173,7 @@
 (global-set-key (kbd "C-S-t") 'multi-term-dedicated-close)
 
 (load-file "~/.emacs.d/custom/flymake.el")
+
 
 ;;(load-file "~/.emacs.d/custom/vterm.el")
 ;;(global-unset-key (kbd "C-t"))
@@ -195,8 +201,10 @@
 ;;(load-file "~/.emacs.d/custom/ggtags.el")
 
 (load-file "~/.emacs.d/custom/undo-fu.el")
+;; Better undo
 
 (load-file "~/.emacs.d/custom/undo-fu-session.el")
+;; Undo history saver
 (global-unset-key (kbd "C-_"))
 (global-set-key (kbd "C-_") 'undo-fu-only-undo)
 (global-unset-key (kbd "C--"))
@@ -213,15 +221,18 @@
 ;;(load-file "~/.emacs.d/custom/use-package-chords.el")
 
 (load-file "~/.emacs.d/custom/globalkb.el")
+;; Customized Keybindings
 
 ;;(load-file "~/.emacs.d/custom/bookmark+.el")
 
 ;;(load-file "~/.emacs.d/custom/magit.el")
 
+(load-file "~/.emacs.d/custom/all-the-icons.el")
+
 (global-unset-key (kbd "C-c g"))
 (global-set-key (kbd "C-c g") 'magit-file-dispatch)
 
-(load-file "~/.emacs.d/custom/dedicated-window.el")
+;;(load-file "~/.emacs.d/custom/dedicated-window.el")
 
 (setq byte-compile-warnings '(cl-functions))
 
@@ -232,3 +243,64 @@
 (global-unset-key (kbd "<f2>"))
 (global-set-key (kbd "<f2>") 'utility-toggle)
 
+;;(define-key ibuffer-mode-map (kbd "<RET>") 'display-buffer-in-previous-window)
+
+
+
+
+(load-file "~/.emacs.d/custom/ibuffer.el")
+
+;; (add-to-list 'ibuffer-list-buffers
+;;          '(".*" display-buffer-in-side-window
+;;           (side . left) (window-width . 30)))
+
+;; (global-unset-key (kbd "<f3>"))
+;; (global-set-key (kbd "<f3>") 'ibuffer-list-buffers)
+
+;;(load-file "~/.emacs.d/custom/nyan-mode.el")
+
+
+;; (load-file "~/.emacs.d/custom/sr-speedbar.el")
+;; (setq speedbar-initial-expansion-list-name "quick buffers")
+;; (setq speedbar-use-images nil) ; use text for buttons
+;; (setq sr-speedbar-right-side nil) ; put on left side
+
+;; (custom-set-variables
+;;  '(display-buffer-alist
+;;    '(("\\*Ibuffer\\*" display-buffer-in-side-window
+;;       (side . left)
+;;       (slot . -1)
+;;       (window-parameters . ((no-other-window . t)))))))
+
+
+
+;; (defvar b_list 1)
+
+;; (defun b-list ()
+;;   "Switch between showing bufferlist windows"
+;;   (interactive)
+;;   (cond
+;;    ((= b_list 1)
+;;     ;; (message "Displaying no utility window")
+    
+;;     (condition-case nil (display-buffer "*Ibuffer*"
+;;                     '(display-buffer-in-side-window . ((side . left)
+;;                                                        (window-width . 30))))
+      
+;;     (setq b_list 2))
+
+;;    ((= b_list 2)
+;;     ;;(delete-window-on &optional "*Ibuffer")
+;;     (delete-window (get-buffer-window "*Ibuffer*"))
+;;     (setq b_list 1))
+;;    )
+;;   )
+
+;; (global-unset-key (kbd "<f3>"))
+;; (global-set-key (kbd "<f3>") 'b-list)
+
+;; (defalias 'list-buffers 'ibuffer)
+;; (setq ibuffer-shrink-to-minimum-size t)
+;; (setq ibuffer-always-show-last-buffer nil)
+;; (setq ibuffer-sorting-mode 'recency)
+;; (setq ibuffer-use-header-line t)
