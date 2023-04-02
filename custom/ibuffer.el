@@ -50,3 +50,7 @@
 ;;     (toggle-read-only)))
 
 ;;(ad-activate 'ibuffer-update-title-and-summary)
+
+;; (define-key ibuffer-mode-map (kbd "<RET>") 'ibuffer-visit-buffer-other-window (previous-window))
+
+;; (define-key ibuffer-mode-map (kbd "<RET>") 'ibuffer-visit-buffer-other-window-noselect (previous-window))

@@ -62,6 +62,8 @@
 (load-file "~/.emacs.d/custom/highlight-indent-guides.el")
 ;; Brackets higlighted with side characters
 
+;;(load-file "~/.emacs.d/custom/golden-ratio.el")
+
 (load-file "~/.emacs.d/custom/emacs.el")
 (global-unset-key (kbd "M-w"))
 (global-set-key (kbd "M-w") 'kill-ring-save)
@@ -134,6 +136,10 @@
 
 (load-file "~/.emacs.d/custom/irony.el")
 ;; Autocompletiotion for CPP (1/2)
+
+(load-file "~/.emacs.d/custom/auto-dim-other-buffers.el")
+
+;;(load-file "~/.emacs.d/custom/defun-highlight-current-window.el")
 
 (load-file "~/.emacs.d/custom/company.el")
 ;; Autocompletiotion for CPP (2/2)

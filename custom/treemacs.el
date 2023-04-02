@@ -29,6 +29,7 @@
 ;;---(projectile-reset-known-projects)
 (kill-current-buffer)
 (add-hook 'treemacs-mode-hook (lambda() (display-line-numbers-mode -1)))
+;;(treemacs-is-never-other-window)
 
 ;; ;; Treemacs
 ;; (use-package treemacs
