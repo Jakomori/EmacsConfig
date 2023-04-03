@@ -84,61 +84,64 @@
 ;; (define-key treemacs-mode-map (kbd "M-<down>") 'next-line)
 
 ;;------------------------------
-(defun utility-toggle ()
-  "Switch between showing utility windows"
-  (interactive)
-  (cond
+;; (defun utility-toggle ()
+;;   "Switch between showing utility windows"
+;;   (interactive)
+;;   (cond
    
-   ((= utility_toggle 1)
-    ;;    (condition-case nil 
+;;    ((= utility_toggle 1)
+;;     ;;    (condition-case nil 
     
     
-    (multi-term-dedicated-close)
-    (message "Displaying no utility window")
+;;     (multi-term-dedicated-close)
+;;     (message "Displaying no utility window")
     
-    ;; (error (message "Tried to not display any utility window..."))
-    ;;     (error (message "Tried to not display any utility window..."))
+;;     ;; (error (message "Tried to not display any utility window..."))
+;;     ;;     (error (message "Tried to not display any utility window..."))
     
     
-    (setq utility_toggle 2))
+;;     (setq utility_toggle 2))
 
-   ((= utility_toggle 2)
-					;  (condition-case nil (
-    (message "Displaying treemacs")
-    (treemacs)
-    (select-window (previous-window))
+;;    ((= utility_toggle 2)
+;; 					;  (condition-case nil (
+;;     (message "Displaying treemacs")
+;;     (treemacs)
+;;     (select-window (previous-window))
 
-    ;;    (add-hook 'mytreemacs-mode-hook
-    ;;              (lambda ()
-    ;; (local-unset-key (kbd "M-down"))
-    ;; (local-set-key (kbd "M-down") #'switch-to-from-treemacs)
-    ;;		))
-					;			 )
-					;     (error (message "Tried to display treemacs...")))
-    (setq utility_toggle 3))
+;;     ;;    (add-hook 'mytreemacs-mode-hook
+;;     ;;              (lambda ()
+;;     ;; (local-unset-key (kbd "M-down"))
+;;     ;; (local-set-key (kbd "M-down") #'switch-to-from-treemacs)
+;;     ;;		))
+;; 					;			 )
+;; 					;     (error (message "Tried to display treemacs...")))
+;;     (setq utility_toggle 3))
 
-   ((= utility_toggle 3)
-					;    (condition-case nil (
-    (message "Displaying bufferlist")
-    (display-buffer "*Ibuffer*"
-		    '(display-buffer-in-side-window . ((side . left)
-						       (window-width . 35)
-						       (dedicated . side))))
-					;			 )
-					;      (error (message "Tried to display bufferlist...")))
+;;    ((= utility_toggle 3)
+;; 					;    (condition-case nil (
+;;     (message "Displaying bufferlist")
+;;     (display-buffer "*Ibuffer*"
+;; 		    '(display-buffer-in-side-window . ((side . left)
+;; 						       (window-width . 35)
+;; 						       (dedicated . side))))
+;; 					;			 )
+;; 					;      (error (message "Tried to display bufferlist...")))
 
-    (setq utility_toggle 4))
+;;     (setq utility_toggle 4))
    
-   ((= utility_toggle 4)
-					;    (condition-case nil (
-    (message "Displaying multi-term")
-    (delete-window (get-buffer-window "*Ibuffer*"))
-    (multi-term-dedicated-open)
-					;			 )
-					;      (error (message "Tried to display multi-term...")))
-    (setq utility_toggle 1))
-   )
-  )
+;;    ((= utility_toggle 4)
+;; 					;    (condition-case nil (
+;;     (message "Displaying multi-term")
+;;     (delete-window (get-buffer-window "*Ibuffer*"))
+;;     (multi-term-dedicated-open)
+;; 					;			 )
+;; 					;      (error (message "Tried to display multi-term...")))
+;;     (setq utility_toggle 1))
+;;    )
+;;   )
+
+
+
 
 ;; ---------------------------------
 

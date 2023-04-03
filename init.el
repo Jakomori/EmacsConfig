@@ -12,3 +12,5 @@
 ;;	2) Only menu-bar
 ;;	3) Both menu-bar and toolbar
 ;;oof
+
+  (setq multi-term-dedicated-window-height 10)

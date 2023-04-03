@@ -166,11 +166,11 @@
 (global-unset-key (kbd "C-S-m"))
 (global-set-key (kbd "C-S-m") 'treemacs)
 
-(global-unset-key (kbd "M-S-<right>"))
-(global-set-key (kbd "M-S-<right>") 'next-buffer)
+;; (global-unset-key (kbd "M-S-<right>"))
+;; (global-set-key (kbd "M-S-<right>") 'next-buffer)
 
-(global-unset-key (kbd "M-S-<left>"))
-(global-set-key (kbd "M-S-<left>") 'previous-buffer)
+;; (global-unset-key (kbd "M-S-<left>"))
+;; (global-set-key (kbd "M-S-<left>") 'previous-buffer)
 
 (global-unset-key (kbd "C-;"))
 (global-set-key (kbd "C-;") 'comment-region)

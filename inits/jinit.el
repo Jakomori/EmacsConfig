@@ -14,10 +14,6 @@
   (interactive)	
   (message "C-m is not the same as RET anymore"))
 
-;; (setq-default indent-tabs-mode nil)
-;; (setq-default tab-width 4)
-;; (setq indent-line-function 'insert-tab)
-
 ;; Write customization made throught "customize" in "customized.el"
 (setq custom-file "~/.emacs.d/custom/customized.el")
 ;; Load the customization file "customized.el"
@@ -27,28 +23,27 @@
 ;;(global-set-key (kbd "<f11>") nil)
 ;;(global-set-key (kbd "<f11>") 'toggle-frame-maximized)
 
-(load-file "~/.emacs.d/custom/package.el")
 ;; Set-up the package manager for the first installation 
+(load-file "~/.emacs.d/custom/package.el")
 
-(load-file "~/.emacs.d/custom/packagemanager.el")
 ;; Define the used package manager
+(load-file "~/.emacs.d/custom/packagemanager.el")
 
-(load-file "~/.emacs.d/custom/defvar-straight.el")
 ;; Replace packet manager with "straight"
 ;; Uses more repositories to download packages from
+(load-file "~/.emacs.d/custom/defvar-straight.el")
 
-(load-file "~/.emacs.d/custom/evil-commentary.el")
 ;; Introduce 'comment-region, comment selected region
+(load-file "~/.emacs.d/custom/evil-commentary.el")
 
-(load-file "~/.emacs.d/custom/defun-remove-scratch.el")
 ;; Function to automatik kill *scratch* buffer
+(load-file "~/.emacs.d/custom/defun-remove-scratch.el")
 
-;;(load-file "~/.emacs.d/custom/nano-theme.el")			
-(load-file "~/.emacs.d/custom/spacemacs-theme.el")
 ;; Default theme
+(load-file "~/.emacs.d/custom/spacemacs-theme.el")
 
-(load-file "~/.emacs.d/custom/corfu.el")
 ;; Integration for autocompletion, works with dabbrev
+(load-file "~/.emacs.d/custom/corfu.el")
 
 ;;(global-set-key (kbd "RET") 'corfu-quit)
 (define-key corfu-map (kbd "<RET>") 'keyboard-quit)
@@ -59,8 +54,8 @@
 
 ;;(load-file "~/.emacs.d/custom/lsp-bridge.el")
 
-(load-file "~/.emacs.d/custom/highlight-indent-guides.el")
 ;; Brackets higlighted with side characters
+(load-file "~/.emacs.d/custom/highlight-indent-guides.el")
 
 ;;(load-file "~/.emacs.d/custom/golden-ratio.el")
 
@@ -78,10 +73,10 @@
 (global-unset-key (kbd "C-,"))
 (global-set-key (kbd "C-,") 'uncomment-region)
 
-(global-unset-key (kbd "M-S-<right>"))
-(global-set-key (kbd "M-S-<right>") 'next-buffer)
-(global-unset-key (kbd "M-S-<left>"))
-(global-set-key (kbd "M-S-<left>") 'previous-buffer)
+;; (global-unset-key (kbd "M-S-<right>"))
+;; (global-set-key (kbd "M-S-<right>") 'next-buffer)
+;; (global-unset-key (kbd "M-S-<left>"))
+;; (global-set-key (kbd "M-S-<left>") 'previous-buffer)
 (global-unset-key (kbd "C-b"))
 (global-set-key (kbd "C-b") 'switch-to-buffer)
 (global-unset-key (kbd "C-S-b"))
@@ -126,42 +121,46 @@
 (global-unset-key (kbd "C-f"))
 (global-set-key (kbd "C-f") 'isearch-forward)
 
-(load-file "~/.emacs.d/custom/dabbrev.el")
 ;; Gives info in autocompletion
+(load-file "~/.emacs.d/custom/dabbrev.el")
 
-(load-file "~/.emacs.d/custom/orderless.el")
 ;; Allow autocompletion to search without requiring correct spelling
+(load-file "~/.emacs.d/custom/orderless.el")
 
 ;;(load-file "~/.emacs.d/custom/fancy-dabbrev.el")
 
-(load-file "~/.emacs.d/custom/irony.el")
 ;; Autocompletiotion for CPP (1/2)
+(load-file "~/.emacs.d/custom/irony.el")
 
-(load-file "~/.emacs.d/custom/auto-dim-other-buffers.el")
+;; Autocompletiotion for CPP (2/2)
+(load-file "~/.emacs.d/custom/company.el")
+
+;;(load-file "~/.emacs.d/custom/auto-dim-other-buffers.el")
 
 ;;(load-file "~/.emacs.d/custom/defun-highlight-current-window.el")
 
-(load-file "~/.emacs.d/custom/company.el")
-;; Autocompletiotion for CPP (2/2)
-
-(load-file "~/.emacs.d/custom/whole-line-or-region.el")
 ;; Use whole line for cut/copy when no text is selected
+(load-file "~/.emacs.d/custom/whole-line-or-region.el")
 
 ;; Popup-kill-ring - better killing means better paste!
 (load-file "~/.emacs.d/custom/popup-kill-ring.el")
 
+;; Gives completion at point, works well with "corfu"
 (load-file "~/.emacs.d/custom/cape.el")
 
+;; Provides a vertical completions UI 
 (load-file "~/.emacs.d/custom/vertico.el")
 
+;; Project management
 (load-file "~/.emacs.d/custom/projectile.el")
 
-(load-file "~/.emacs.d/custom/origami.el")
 ;; Fold text regions
+(load-file "~/.emacs.d/custom/origami.el")
 
-(load-file "~/.emacs.d/custom/rainbow-delimiters.el")
 ;; Brackets color-coded
+(load-file "~/.emacs.d/custom/rainbow-delimiters.el")
 
+;; Gives tree to navigate filepath
 (load-file "~/.emacs.d/custom/treemacs.el")
 (global-unset-key (kbd "<C-m>"))
 (global-set-key (kbd "<C-m>") 'treemacs-select-window)
@@ -172,20 +171,15 @@
 
 ;;(load-file "~/.emacs.d/custom/treemacs-icons-dired.el")
 
+;; Built-in terminal
 (load-file "~/.emacs.d/custom/multi-term.el")
 (global-unset-key (kbd "C-t"))
 (global-set-key (kbd "C-t") 'multi-term-dedicated-open)
 (global-unset-key (kbd "C-S-t"))
 (global-set-key (kbd "C-S-t") 'multi-term-dedicated-close)
 
+;; Check spelling error in some coding languages
 (load-file "~/.emacs.d/custom/flymake.el")
-
-
-;;(load-file "~/.emacs.d/custom/vterm.el")
-;;(global-unset-key (kbd "C-t"))
-;;(global-set-key (kbd "C-t") ')
-;;(global-unset-key (kbd "C-S-t"))
-;;(global-set-key (kbd "C-S-t") 'multi-term-dedicated-close)
 
 ;;(load-file "~/.emacs.d/custom/minimap.el")
 
@@ -196,18 +190,19 @@
 (load-file "~/.emacs.d/custom/defun-indent-buffer.el")
 (global-set-key (kbd "S-<iso-lefttab>") 'indent-buffer)
 
-(load-file "~/.emacs.d/custom/rainbow-delimiters.el")
-
+;; Real time collaborative programming enviroment
 (load-file "~/.emacs.d/custom/crdt.el")
 
+;; Store the files history
 (load-file "~/.emacs.d/custom/savehist.el")
 
+;; Add annotations to minibuffers
 (load-file "~/.emacs.d/custom/marginalia.el")
 
 ;;(load-file "~/.emacs.d/custom/ggtags.el")
 
-(load-file "~/.emacs.d/custom/undo-fu.el")
 ;; Better undo
+(load-file "~/.emacs.d/custom/undo-fu.el")
 
 (load-file "~/.emacs.d/custom/undo-fu-session.el")
 ;; Undo history saver
@@ -226,17 +221,17 @@
 
 ;;(load-file "~/.emacs.d/custom/use-package-chords.el")
 
-(load-file "~/.emacs.d/custom/globalkb.el")
 ;; Customized Keybindings
+(load-file "~/.emacs.d/custom/globalkb.el")
 
 ;;(load-file "~/.emacs.d/custom/bookmark+.el")
 
 ;;(load-file "~/.emacs.d/custom/magit.el")
 
-(load-file "~/.emacs.d/custom/all-the-icons.el")
+;;(load-file "~/.emacs.d/custom/all-the-icons.el")
 
-(global-unset-key (kbd "C-c g"))
-(global-set-key (kbd "C-c g") 'magit-file-dispatch)
+;; (global-unset-key (kbd "C-c g"))
+;; (global-set-key (kbd "C-c g") 'magit-file-dispatch)
 
 ;;(load-file "~/.emacs.d/custom/dedicated-window.el")
 
@@ -247,10 +242,13 @@
 (global-set-key (kbd "<f11>") 'menu-toggle)
 
 (global-unset-key (kbd "<f2>"))
-(global-set-key (kbd "<f2>") 'utility-toggle)
+(global-set-key (kbd "<f2>") 'treemacs)
 
-;;(define-key ibuffer-mode-map (kbd "<RET>") 'display-buffer-in-previous-window)
+(global-unset-key (kbd "<f3>"))
+(global-set-key (kbd "<f3>") 'multi-term-dedicated-toggle)
+;;(multi-term)
 
+;;(define-key ibuffer-mode-map (kbd "RET") 'ibuffer-visit-buffer-other-window previous-window)
 
 
 
@@ -263,8 +261,19 @@
 ;; (global-unset-key (kbd "<f3>"))
 ;; (global-set-key (kbd "<f3>") 'ibuffer-list-buffers)
 
-;;(load-file "~/.emacs.d/custom/nyan-mode.el")
+(load-file "~/.emacs.d/custom/nyan-mode.el")
 
+(load-file "~/.emacs.d/custom/kind-icon.el")
+
+(load-file "~/.emacs.d/custom/centaur-tab.el")
+
+
+
+
+(global-unset-key (kbd "M-S-<right>"))
+(global-set-key (kbd "M-S-<right>") 'centaur-tabs-forward)
+(global-unset-key (kbd "M-S-<left>"))
+(global-set-key (kbd "M-S-<left>") 'centaur-tabs-backward)
 
 ;; (load-file "~/.emacs.d/custom/sr-speedbar.el")
 ;; (setq speedbar-initial-expansion-list-name "quick buffers")
