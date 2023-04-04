@@ -1,11 +1,22 @@
 #Makefile for CPP projects
 
-name = "cpp/es"
+name = cpp/es
+
+home = ~/
+
+nothing = 
+
+nohome = $(subst $(home),$(nothing),$(OUTPATH))
 
 cppnew:
 	@mkdir -p $(OUTPATH)/$(name)
-#	@cp -r $(ECPP) $(EMK) $(OUTPATH)/$(name)
 	@cp -r $(ECPP) $(EMK) $(OUTPATH)/$(name)
+
+cppnewgo:
+	@make cppnew
+	cd
+	cd $(nohome)
+
 # newcpp:
 # 	ind=1 ; while [[ $$ind -le 255 ]] ; do \
 # 		[ if ! -d (OUTPATH)/cppex/es$$ind ]; then \

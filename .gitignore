@@ -9,12 +9,12 @@
 #	well, I guess this is important
 
 !init.el
-!inits/
-inits/*
-!inits/jinit.el
+!setup/
+setup/*
+!setup/jinit.el
 #	whithout these I dont't think anything here would be of any use
 
-!custom/
+!jinit/
 #	I prefer to have a shorter init, and load file for specific packages
 
 !Makefile
