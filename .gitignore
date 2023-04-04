@@ -8,6 +8,8 @@
 !.gitignore
 #	well, I guess this is important
 
+!Suggested.txt
+
 !init.el
 !setup/
 setup/*

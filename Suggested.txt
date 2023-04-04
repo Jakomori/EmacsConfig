@@ -1,0 +1,2 @@
+Tuntox for using crdt
+install libclang irony-mode for cpp
