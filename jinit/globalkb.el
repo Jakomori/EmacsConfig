@@ -233,3 +233,5 @@
 ;; (term-bind-key-alist)
 
 ;; (global-set-key (kbd "C-<BACKSPACE>") 
+
+(provide 'globalkb)

@@ -8,3 +8,5 @@
       (list
        '(:eval (list (nyan-create)))
        ))
+
+(provide 'nyan-mode_config)

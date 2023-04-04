@@ -19,3 +19,5 @@
 ;;(use-package straight
 ;;             :custom (straight-use-package-by-default t))
 (setq straight-use-package-by-default t)
+
+(provide 'defvar-straight)

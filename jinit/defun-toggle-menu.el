@@ -188,3 +188,6 @@
   ;;                                             1)
   ;;                    nil)))
   ;;     (and err1 err2)))
+
+
+(provide 'defun-toggle-menu)

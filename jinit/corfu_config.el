@@ -1,3 +1,4 @@
+(message "ueueueu")
 
 (use-package corfu
   ;; Optional customizations
@@ -66,3 +67,4 @@
   )
 
 
+(provide 'corfu_config)

@@ -2,7 +2,7 @@
 
 ;(load-file (emacspath "setup/jinit.el")
 
-(load-file "~/.emacs.d/setup/jinit.el")
+;;(load-file "~/.emacs.d/inits/jinit.el")
 
 ;; (custom-set-variables
 ;;  '(display-buffer-alist
@@ -25,3 +25,7 @@
 
 ;; (setq multi-term-dedicated-window-height 5)
 
+(add-to-list 'load-path "~/.emacs.d/setup/")
+(require 'jinit)
+
+(provide 'init)

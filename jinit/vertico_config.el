@@ -2,3 +2,5 @@
   :ensure
   :init
   (vertico-mode))
+
+(provide 'vertico_config)

@@ -10,3 +10,4 @@
               (ggtags-mode 1))))
 (setq-local imenu-create-index-function #'ggtags-build-imenu-index)
 
+(provide 'ggtags_config)

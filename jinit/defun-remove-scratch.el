@@ -4,3 +4,5 @@
       (kill-buffer "*straight-process*")
   )
 )
+
+(provide 'defun-remove-scratch)

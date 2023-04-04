@@ -6,3 +6,5 @@
 (add-hook 'dired-mode-hook 'dired-hide-details-mode)
 ;;(add-hook 'dired-mode-hook 'treemacs)
 ;;(add-hook 'dired-fin 'treemacs)
+
+(provide 'treemacs-icons-dired_config)

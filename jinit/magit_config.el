@@ -2,3 +2,4 @@
   :ensure
   )
 
+(provide 'magit_config)

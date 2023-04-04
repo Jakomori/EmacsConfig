@@ -27,3 +27,4 @@
 ;;   :ensure)
 
 
+(provide 'irony_config)

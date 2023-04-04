@@ -13,3 +13,5 @@
 	)
   :bind ("C-;" . company-complete-common)
   )
+
+(provide 'company_config)

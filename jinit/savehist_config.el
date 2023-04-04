@@ -4,3 +4,5 @@
   :init
   (savehist-mode)
   )
+
+(provide 'savehist_config)

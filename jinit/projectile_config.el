@@ -3,3 +3,5 @@
   :ensure
   :init
   (projectile-mode))
+
+(provide 'projectile_config)

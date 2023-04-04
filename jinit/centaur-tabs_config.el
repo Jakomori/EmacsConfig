@@ -61,3 +61,5 @@
 
 
 ;; (centaur-tabs-ace-jump)
+
+(provide 'centaur-tabs_config)

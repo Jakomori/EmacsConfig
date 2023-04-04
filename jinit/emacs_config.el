@@ -1,3 +1,5 @@
+(message "ueueeu")
+
 (use-package emacs
   :init
   ;; Add prompt indicator to `completing-read-multiple'.
@@ -32,3 +34,5 @@
   (treemacs-indentation-string " ")
   )
 ;; (setq electric-indent-mode 't)
+
+(provide 'emacs_config)

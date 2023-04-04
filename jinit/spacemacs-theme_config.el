@@ -64,3 +64,4 @@
  ;;   (if (equal ded_buffer 0)
  ;;       (progn (treemacs-select-window)
 
+(provide 'spacemacs-theme_config)

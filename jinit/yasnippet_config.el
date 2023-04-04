@@ -22,3 +22,4 @@
                  (eq old-tick (buffer-chars-modified-tick)))
         (ignore-errors (yas-next-field))))))
 
+(provide 'yasnippet_config)

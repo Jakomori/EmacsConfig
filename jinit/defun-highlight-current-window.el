@@ -7,3 +7,5 @@
   (buffer-face-set 'default))
 
 (add-hook 'buffer-list-update-hook 'highlight-selected-window)
+
+(provide 'defun-highligt-current-window)

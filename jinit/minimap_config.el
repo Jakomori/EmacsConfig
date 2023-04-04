@@ -2,3 +2,5 @@
   :ensure
   )
 ;;(minimap-mode)
+
+(provide 'minimap_config)

@@ -1,8 +1,3 @@
-
-
-
-
-
 (ibuffer)
 (ibuffer-auto-mode)
 (ibuffer)
@@ -54,3 +49,5 @@
 ;; (define-key ibuffer-mode-map (kbd "<RET>") 'ibuffer-visit-buffer-other-window (previous-window))
 
 ;; (define-key ibuffer-mode-map (kbd "<RET>") 'ibuffer-visit-buffer-other-window-noselect (previous-window))
+
+(provide 'ibuffer_config)

@@ -18,4 +18,4 @@
   (highlight-indent-guides-auto-character-face-perc 7)
   :hook (prog-mode . highlight-indent-guides-mode))
 
-(provide 'highlight-indent-guides-setup)
+(provide 'defun-highlight-indent-guides)

@@ -3,3 +3,5 @@
   :init
   :config
   (global-origami-mode 1))
+
+(provide 'origami_config)

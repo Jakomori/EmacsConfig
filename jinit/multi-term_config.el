@@ -8,3 +8,5 @@
 ;;  (setq multi-term-dedicated-skip-other-window-p t)
 ;;  (setq multi-term-dedicated-window-height 10)
   )
+
+(provide 'multi-term_config)

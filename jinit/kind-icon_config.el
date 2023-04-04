@@ -14,3 +14,5 @@
   (kind-icon-default-face 'corfu-default) ; to compute blended backgrounds correctly
   :config
   (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
+
+(provide 'kind-icon_config)

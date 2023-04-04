@@ -15,3 +15,5 @@
 (setq package-enable-at-startup nil)
 
 (require 'use-package) 
+
+(provide 'package_setting)

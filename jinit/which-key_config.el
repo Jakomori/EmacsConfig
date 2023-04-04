@@ -11,3 +11,5 @@
 (which-key-mode)
 (setq which-key-popup-type 'side-window)
 (setq which-key-side-window-location 'bottom)
+
+(provide 'which-key_config)

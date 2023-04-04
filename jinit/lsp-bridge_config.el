@@ -41,3 +41,5 @@
 ;;   (setq lsp-bridge-c-lsp-server 'ccls)
 ;;   (global-lsp-bridge-mode)
 ;;   )
+
+(provide 'lsp-bridge_config)

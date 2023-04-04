@@ -62,3 +62,5 @@
       kept-old-versions 2
       version-control t
       backup-by-copying-when-linked t)
+
+(provide 'overlay_setting)

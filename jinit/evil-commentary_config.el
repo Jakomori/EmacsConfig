@@ -3,3 +3,5 @@
   :ensure
   :config (evil-commentary-mode)
   )
+
+(provide 'evil-commentary_config)

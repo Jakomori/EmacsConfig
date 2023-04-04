@@ -9,3 +9,5 @@
   (setq fancy-dabbrev-indent-command 'tab-to-tab-stop))
 
 ;; (define-key evil-insert-state-map (kbd "<tab>") 'fancy-dabbrev-expand-or-indent))
+
+(provide 'fancy-dabbrev_config)

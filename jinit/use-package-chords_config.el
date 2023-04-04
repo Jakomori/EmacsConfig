@@ -13,3 +13,5 @@
   ;;(key-chord-define-global "C-z" 'undo)
   ;;(key-chord-define-global "C-x" 'save-buffer)
   )
+
+(provide 'use-package-chords_config)

@@ -4,3 +4,5 @@
 (bookmark-bmenu-mode)
 
 (setq bmkp-bmenu-state-file t)
+
+(provide 'bookmar+_config)
