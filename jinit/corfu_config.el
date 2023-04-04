@@ -1,5 +1,3 @@
-(message "ueueueu")
-
 (use-package corfu
   ;; Optional customizations
   ;; :custom

@@ -1,7 +1,7 @@
 ;; by Jakomo
 ;; I'm sorry you have to see this
 
- (add-to-list 'load-path "~/.emacs.d/jinit/")
+(add-to-list 'load-path "~/.emacs.d/jinit/")
 
 ;; Install libclang irony-mode for cpp
 
@@ -33,7 +33,7 @@
 (require 'evil-commentary_config)
 
 ;; Function to automatik kill *scratch* buffer
-(require 'defun-remove-scratch)
+;;(require 'defun-remove-scratch)
 
 ;; Default theme
 (require 'spacemacs-theme_config)
@@ -42,9 +42,9 @@
 (require 'corfu_config)
 (define-key corfu-map (kbd "<RET>") 'keyboard-quit)
 
-;; (require 'yasnippet)
+;; (require 'yasnippet_config)
 
-;; (require 'lsp-bridge)
+;; (require 'lsp-bridge_config)
 
 ;; Brackets higlighted with side characters
 (require 'defun-highlight-indent-guides)
@@ -142,27 +142,35 @@
 
 ;; Fold text regions
 (require 'origami_config)
+(global-unset-key (kbd "C-."))
+(global-set-key (kbd "C-.") 'origami-toggle-node)
 
 ;; Brackets color-coded
 (require 'rainbow-delimiters_config)
 
 ;; Gives tree to navigate filepath
 (require 'treemacs_config)
-(global-unset-key (kbd "<C-m>"))
-(global-set-key (kbd "<C-m>") 'treemacs-select-window)
+;; (global-unset-key (kbd "<C-m>"))
+;; (global-set-key (kbd "<C-m>") 'treemacs-select-window)
 (global-unset-key (kbd "C-S-m"))
 (global-set-key (kbd "C-S-m") 'treemacs)
 (define-key treemacs-mode-map (kbd "<left>") 'treemacs-root-up)
 (define-key treemacs-mode-map (kbd "<right>") 'treemacs-root-down)
+(define-key treemacs-mode-map (kbd "<RET>") 'nil)
+(define-key treemacs-mode-map (kbd "<RET>") 'treemacs-visit-node-ace)
 
-(require 'treemacs-icons-dired_config)
+;;(define-key treemacs-mode-map (kbd "<RET>") #'treemacs-visit-node-in-most-recently-used-window)
+;; (treemacs-define-RET-action 'file-node-open   #'treemacs-visit-node-in-most-recently-used-window)
+;; (treemacs-define-RET-action 'file-node-closed #'treemacs-visit-node-in-most-recently-used-window)
+
+;; (require 'treemacs-icons-dired_config)
 
 ;; Built-in terminal
 (require 'multi-term_config)
-(global-unset-key (kbd "C-t"))
-(global-set-key (kbd "C-t") 'multi-term-dedicated-open)
-(global-unset-key (kbd "C-S-t"))
-(global-set-key (kbd "C-S-t") 'multi-term-dedicated-close)
+;; (global-unset-key (kbd "C-t"))
+;; (global-set-key (kbd "C-t") 'multi-term-dedicated-open)
+;; (global-unset-key (kbd "C-S-t"))
+;; (global-set-key (kbd "C-S-t") 'multi-term-dedicated-close)
 
 ;; Check spelling error in some coding languages
 (require 'flymake_config)
@@ -180,10 +188,10 @@
 ;; (require 'crdt_config)
 
 ;; Store the files history
-(provide 'savehist_config)
+(require 'savehist_config)
 
 ;; Add annotations to minibuffers
-(provide 'marginalia_config)
+(require 'marginalia_config)
 
 ;; (load-file "~/.emacs.d/custom/ggtags.el")
 

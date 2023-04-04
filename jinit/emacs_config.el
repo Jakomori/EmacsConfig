@@ -1,5 +1,3 @@
-(message "ueueeu")
-
 (use-package emacs
   :init
   ;; Add prompt indicator to `completing-read-multiple'.

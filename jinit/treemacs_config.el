@@ -57,10 +57,10 @@
 ;;   (treemacs-persist-file (expand-file-name ".cache/treemacs-persist" user-emacs-directory))
 ;;   (treemacs-recenter-after-file-follow nil)
 ;;   (treemacs-recenter-after-tag-follow nil)
-;; ;;  (treemacs-show-cursor nil)
+;;   (treemacs-show-cursor nil)
 ;;   (treemacs-show-hidden-files t)
-;; ;;  (treemacs-silent-filewatch nil)
-;; ;;  (treemacs-silent-refresh nil)
+;;   (treemacs-silent-filewatch nil)
+;;   (treemacs-silent-refresh nil)
 ;;   (treemacs-sorting 'alphabetic-desc)
 ;;   (treemacs-space-between-root-nodes t)
 ;;   (treemacs-tag-follow-cleanup t)
@@ -69,7 +69,7 @@
 ;;   :config
 ;;   ;; The default width and height of the icons is 22 pixels. If you are
 ;;   ;; using a Hi-DPI display, uncomment this to double the icon size.
-;;   ;;(treemacs-resize-icons 44)
+;;   (treemacs-resize-icons 44)
 ;;   (treemacs-follow-mode t)
 ;;   (treemacs-filewatch-mode t)
 ;;   (treemacs-fringe-indicator-mode t)
