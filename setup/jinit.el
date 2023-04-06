@@ -159,7 +159,7 @@
 (define-key treemacs-mode-map (kbd "<RET>") 'nil)
 (define-key treemacs-mode-map (kbd "<RET>") 'treemacs-visit-node-ace)
 
-;;(define-key treemacs-mode-map (kbd "<RET>") #'treemacs-visit-node-in-most-recently-used-window)
+;; (define-key treemacs-mode-map (kbd "<RET>") #'treemacs-visit-node-in-most-recently-used-window)
 ;; (treemacs-define-RET-action 'file-node-open   #'treemacs-visit-node-in-most-recently-used-window)
 ;; (treemacs-define-RET-action 'file-node-closed #'treemacs-visit-node-in-most-recently-used-window)
 
@@ -229,8 +229,8 @@
 (setq byte-compile-warnings '(cl-functions))
 
 (require 'defun-toggle-menu)
-(global-unset-key (kbd "<f11>"))
-(global-set-key (kbd "<f11>") 'menu-toggle)
+(global-unset-key (kbd "<f10>"))
+(global-set-key (kbd "<f10>") 'menu-toggle)
 (global-unset-key (kbd "<f2>"))
 (global-set-key (kbd "<f2>") 'treemacs)
 (global-unset-key (kbd "<f3>"))
