@@ -248,4 +248,19 @@
 (global-unset-key (kbd "M-S-<left>"))
 (global-set-key (kbd "M-S-<left>") 'centaur-tabs-backward)
 
+(require 'rust_config)
+
+;;(require 'my_noobmode)
+
+(require 'iedit_config)
+(global-set-key (kbd "C--") 'iedit-mode)
+
+(require 'deadgrep_config)
+(global-set-key (kbd "<f6>") nil)
+(global-set-key (kbd "<f6>") #'deadgrep)
+
+(require 'wgrep_config)
+
+
 (provide 'jinit)
+

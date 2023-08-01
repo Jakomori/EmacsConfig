@@ -24,6 +24,14 @@
    )
   )
 
+(defun terminal-toggle ()
+  "Switch between dispalying or not terminal."
+  (interactive)
+  (cond
+   ((= terminal_toggle 1)
+    (message "Displaying terminal")
+    (
+
 ;;(setq utility_toggle 1)
 
 
@@ -191,3 +199,9 @@
 
 
 (provide 'defun-toggle-menu)
+
+
+(when (find-image '((:type png :file "menu1.png")))
+    (unless tool-bar-mode (tool-bar-mode 1))
+    (setq tool-bar-map (make-sparse-keymap))
+    (tool-bar-add-item "menu1" 'multi-term-dedicated-open 'pink-defun))
